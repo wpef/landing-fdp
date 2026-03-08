@@ -367,4 +367,117 @@
       <div class="pain-icon">🧩</div>
       <div class="pain-title">La compétence manquante</div>
       <div class="pain-desc">Votre équipe maîtrise le front. La migration WooCommerce vers Shopify headless, c'est une autre histoire.</div>
-      <div class="pain-quote">"On n'a person
+      <div class="pain-quote">"On n'a personne en interne sur ce stack."</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🔗</div>
+      <div class="pain-title">Le client qui vous court-circuite</div>
+      <div class="pain-desc">Il prend des décisions techniques sans vous. Les specs changent. Le projet dérive.</div>
+      <div class="pain-quote">"Ils ont contacté un dev directement, on a appris après."</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">📉</div>
+      <div class="pain-title">La dette technique héritée</div>
+      <div class="pain-desc">Vous reprenez un projet livré par une autre agence. Stack indocumentée, plugins en vrac, zero process.</div>
+      <div class="pain-quote">"On reprend un site dont on n'a aucun historique."</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🏗️</div>
+      <div class="pain-title">L'offre technique à étoffer</div>
+      <div class="pain-desc">Vos clients demandent du Shopify Plus, du CMS headless, des automatisations. Votre core team n'est pas là-dessus.</div>
+      <div class="pain-quote">"On aimerait proposer ça mais on n'a pas la ressource."</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-icon">🎯</div>
+      <div class="pain-title">Le projet sans PO disponible</div>
+      <div class="pain-desc">Le dev attend les specs. Le client ne sait pas prioriser. Personne ne cadre les sprints.</div>
+      <div class="pain-quote">"On a besoin de quelqu'un pour tenir la roadmap."</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="matching">
+  <div class="section-label">Première étape</div>
+  <h2 class="section-title">Un call. On voit si ça matche.</h2>
+  <p class="section-desc">Pas de devis à l'aveugle. On prend 30 minutes pour qualifier le besoin, comprendre votre contexte, et voir concrètement comment je peux m'intégrer.</p>
+
+  <div class="matching-card">
+    <div class="matching-card-header">
+      <div class="matching-card-title">
+        Ce qu'on qualifie ensemble
+        <span class="tag tag-blue">30 min</span>
+      </div>
+      <span class="tag tag-grey">Sans engagement</span>
+    </div>
+    <div class="matching-card-body">
+      <div>
+        <div class="matching-item-title">Contexte projet</div>
+        <div class="matching-item-val">Stack technique, état du projet, équipe en place, délais</div>
+      </div>
+      <div>
+        <div class="matching-item-title">Besoins réels</div>
+        <div class="matching-item-val">Renfort ponctuel, montée en charge, compétence manquante, PO, conseil</div>
+      </div>
+      <div>
+        <div class="matching-item-title">Mode d'intégration</div>
+        <div class="matching-item-val">White label, co-brandé ou relais terrain — on choisit ensemble ce qui fait sens</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="outcomes-wrapper">
+    <svg id="audit-arrow" class="audit-arrow-svg" viewBox="0 0 60 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line id="arrow-trunk" x1="30" y1="0" x2="30" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="220" stroke-dashoffset="220"/>
+      <line id="arrow-b1" x1="30" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+      <line id="arrow-b2" x1="30" y1="140" x2="60" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+      <line id="arrow-b3" x1="30" y1="220" x2="60" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+    </svg>
+
+    <div class="outcomes-grid">
+      <div class="outcome-card" id="oc-1">
+        <div class="outcome-icon">🕶️</div>
+        <div class="outcome-title">Renfort — White label</div>
+        <div class="outcome-desc">J'intègre vos équipes sous votre marque. Vos clients ne savent pas que j'existe. Votre process, votre image.</div>
+      </div>
+      <div class="outcome-card" id="oc-2">
+        <div class="outcome-icon">🛰️</div>
+        <div class="outcome-title">Satellite — Co-brandé</div>
+        <div class="outcome-desc">J'interviens chez votre client en mon nom, dans le cadre de votre mission. Vous gardez le contrôle, je prends la technique.</div>
+      </div>
+      <div class="outcome-card" id="oc-3">
+        <div class="outcome-icon">📡</div>
+        <div class="outcome-title">Ambassadeur — Relais terrain</div>
+        <div class="outcome-desc">Je suis chez votre client, je fluidifie votre relation avec lui. Je fais avancer les sujets, je suis votre interface de confiance sur place.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-block">
+    <div class="price-block-header">
+      <span class="section-label" style="margin:0">Call de matching</span>
+      <span class="tag tag-grey">Imputable sur la première mission</span>
+    </div>
+    <div class="price-block-body">
+      <div class="price-block-amount">80 €</div>
+      <div class="price-block-detail">
+        <strong>30 minutes · visio</strong><br>
+        Qualification du besoin, présentation des compétences, choix du mode d'intégration.<br>
+        Imputable sur la première facture de mission.
+      </div>
+    </div>
+    <div class="price-block-footer">HT · Sans engagement · Remboursé si on travaille ensemble</div>
+  </div>
+</section>
+
+<section class="section" id="plans">
+  <div class="section-label">Tarifs</div>
+  <h2 class="section-title">Un TJM selon le rôle. Rien de plus.</h2>
+  <p class="section-desc">Pas de forfait opaque. Le tarif dépend du niveau d'engagement — exécution, pilotage ou conseil stratégique.</p>
+
+  <div class="plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">Q/A</div>
+      <div class="plan-price">450€</div>
+      <div class="plan-period">/ jour HT</div>
+      <div class="plan-divider"></div>
+      <ul clas
