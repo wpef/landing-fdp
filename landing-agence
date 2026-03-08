@@ -480,4 +480,183 @@
       <div class="plan-price">450€</div>
       <div class="plan-period">/ jour HT</div>
       <div class="plan-divider"></div>
-      <ul clas
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Tests fonctionnels et techniques</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Recette de livrables</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et validation de déploiement</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Rapports de non-conformité</li>
+      </ul>
+      <div class="plan-ideal">Renfort sur un déploiement ou une phase de recette critique.</div>
+      <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
+    </div>
+    <div class="plan-card featured">
+      <div class="plan-name">PO <span class="tag tag-blue">Fréquent</span></div>
+      <div class="plan-price">600€</div>
+      <div class="plan-period">/ jour HT</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et animation des sprints</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Pilotage des développeurs</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Rédaction et priorisation des tickets</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Q/A intégré</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Reporting client</li>
+      </ul>
+      <div class="plan-ideal">Pilotage opérationnel d'un projet ou d'une équipe technique.</div>
+      <a href="#contact" class="plan-cta plan-cta-featured">Caler un call</a>
+    </div>
+    <div class="plan-card">
+      <div class="plan-name">Conseil</div>
+      <div class="plan-price">750€</div>
+      <div class="plan-period">/ jour HT</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Cadrage et gestion de roadmap</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Arbitrages budget / périmètre</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> PO inclus</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Recommandations stack technique</li>
+        <li class="plan-feature"><span class="plan-feature-check">✓</span> Interface stratégique avec le client final</li>
+      </ul>
+      <div class="plan-ideal">Engagement stratégique sur un projet structurant ou un compte clé.</div>
+      <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
+    </div>
+  </div>
+
+  <div class="conditions-block">
+    <div class="conditions-title">Conditions</div>
+    <ul class="conditions-list">
+      <li class="conditions-item">
+        <span class="conditions-dot"></span>
+        <span>Facturation au réel — à la journée ou demi-journée selon le contexte.</span>
+      </li>
+      <li class="conditions-item">
+        <span class="conditions-dot"></span>
+        <span>Disponibilité confirmée à l'issue du call de matching — pas de réservation à l'aveugle.</span>
+      </li>
+      <li class="conditions-item">
+        <span class="conditions-dot"></span>
+        <span>Engagement minimum : aucun. Missions courtes (1–2 j) ou rétainer mensuel, les deux sont possibles.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="terminal-filename">fdp-stack.sh</span>
+    </div>
+    <div class="terminal-body">
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./profil --export competences</span></span>
+      <span class="t-line t-comment"># Stack technique — Senior 12 ans</span>
+      <span class="t-line t-success">✓  E-commerce       →  Shopify, Shopify Plus, WooCommerce, PrestaShop</span>
+      <span class="t-line t-success">✓  CMS headless      →  Storyblok, Contentful, Strapi</span>
+      <span class="t-line t-success">✓  No-code / métier  →  Airtable, Softr, Notion</span>
+      <span class="t-line t-success">✓  Automatisation    →  n8n, Make</span>
+      <span class="t-line t-success">✓  CMS classiques    →  WordPress, ACF, Elementor</span>
+      <span class="t-line">&nbsp;</span>
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./modes --intégration agence</span></span>
+      <span class="t-line t-out">[ renfort ]     White label — sous votre marque, dans vos process</span>
+      <span class="t-line t-out">[ satellite ]   Co-brandé — chez votre client, dans votre mission</span>
+      <span class="t-line t-out">[ ambassadeur ] Relais terrain — fluidifie agence ↔ client</span>
+      <span class="t-line">&nbsp;</span>
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./matching --disponibilite</span></span>
+      <span class="t-line t-success">→  Call 30 min · 80 € · imputable sur mission</span>
+      <span class="t-line t-success">→  Réponse sous 24h ouvrées</span>
+      <span class="t-line t-success">→  Basé Marseille · remote OK · déplacement possible</span>
+      <span class="t-line">&nbsp;</span>
+      <span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;">On commence par un call.</div>
+    <h2 class="cta-title">30 min pour voir si ça matche.<br>Pas de pitch. Que du concret.</h2>
+    <p class="cta-sub">Vous présentez le contexte. Je vous dis ce que je peux faire et comment.</p>
+    <p class="cta-sub2">Senior autonome — aucune supervision nécessaire, aucun onboarding à rallonge.</p>
+    <a href="https://calendly.com/fdp" class="btn-primary" style="font-size: 15px; padding: 12px 28px;">
+      Réserver un créneau →
+    </a>
+    <p class="cta-hint">80 € · imputable · Shopify · WordPress · CMS headless · Automatisation</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <span class="logo-line"><span class="initial">F</span>ils</span>
+    <span class="logo-line"><span class="initial">d</span>e</span>
+    <span class="logo-line"><span class="initial">P</span>rojet</span>
+  </div>
+  <div class="footer-links">
+    <span>Shopify</span>
+    <span>CMS headless</span>
+    <span>No-code</span>
+    <span>Automatisation</span>
+  </div>
+  <div class="footer-right">© 2026</div>
+</footer>
+
+<script>
+  // ── Hero word swap ────────────────────────────────────────────────
+  const swapEl = document.getElementById('hero-swap');
+  const hint   = document.getElementById('reveal-hint');
+  const SWAP_THRESHOLD = 60;
+
+  function updateSwap() {
+    const sy = window.scrollY;
+    if (sy >= SWAP_THRESHOLD) {
+      swapEl.classList.add('revealed');
+      hint.classList.add('hidden');
+    } else {
+      swapEl.classList.remove('revealed');
+      hint.classList.remove('hidden');
+    }
+  }
+  window.addEventListener('scroll', updateSwap, { passive: true });
+  updateSwap();
+
+  // ── Flèche SVG matching → outcomes ───────────────────────────────
+  const trunk   = document.getElementById('arrow-trunk');
+  const b1      = document.getElementById('arrow-b1');
+  const b2      = document.getElementById('arrow-b2');
+  const b3      = document.getElementById('arrow-b3');
+  const oc1     = document.getElementById('oc-1');
+  const oc2     = document.getElementById('oc-2');
+  const oc3     = document.getElementById('oc-3');
+  const wrapper = document.querySelector('.outcomes-wrapper');
+
+  const TRUNK_LEN  = 220;
+  const BRANCH_LEN = 30;
+  const Y_B1 = 60, Y_B2 = 140, Y_B3 = 220;
+
+  function updateArrow() {
+    if (!wrapper) return;
+    const rect = wrapper.getBoundingClientRect();
+    const cursorInWrapper = window.innerHeight * 0.20 - rect.top;
+    const progress = Math.max(0, Math.min(1, cursorInWrapper / (rect.height * 0.30)));
+
+    trunk.style.strokeDashoffset = TRUNK_LEN * (1 - progress);
+    const headY = progress * TRUNK_LEN;
+
+    const prog1 = Math.max(0, Math.min(1, (headY - Y_B1) / 40));
+    b1.style.strokeDashoffset = BRANCH_LEN * (1 - prog1);
+    if (prog1 >= 1) oc1.classList.add('lit'); else oc1.classList.remove('lit');
+
+    const prog2 = Math.max(0, Math.min(1, (headY - Y_B2) / 40));
+    b2.style.strokeDashoffset = BRANCH_LEN * (1 - prog2);
+    if (prog2 >= 1) oc2.classList.add('lit'); else oc2.classList.remove('lit');
+
+    const prog3 = Math.max(0, Math.min(1, (headY - Y_B3) / 40));
+    b3.style.strokeDashoffset = BRANCH_LEN * (1 - prog3);
+    if (prog3 >= 1) oc3.classList.add('lit'); else oc3.classList.remove('lit');
+  }
+
+  window.addEventListener('scroll', updateArrow, { passive: true });
+  updateArrow();
+</script>
+
+</body>
+</html>
+
