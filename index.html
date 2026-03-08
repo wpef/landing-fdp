@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fils de Projet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── THEME TOKENS ─────────────────────────────────────────────── */
+  :root {
+    /* Client (green) — default */
+    --accent: #00c853;
+    --accent-hover: #00e060;
+    --accent-dim: rgba(0, 200, 83, 0.08);
+    --accent-border: rgba(0, 200, 83, 0.2);
+    --accent-glow: rgba(0,200,83,0.9);
+    --accent-glow-soft: rgba(0,200,83,0.45);
+    --accent-text: #000;
+    --accent-radial: rgba(0,200,83,0.06);
+    --lit-bg: #0d1a12;
+
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface-2: #161616;
+    --surface-3: #1c1c1c;
+    --border: rgba(255,255,255,0.07);
+    --border-strong: rgba(255,255,255,0.12);
+    --text: #e8e8e8;
+    --text-muted: #6b6b6b;
+    --text-dim: #4a4a4a;
+    --white: #ffffff;
+    --radius: 8px;
+    --radius-sm: 5px;
+    --nav-bg: rgba(10,10,10,0.92);
+    --terminal-bg: #080808;
+  }
+
+  [data-mode="agence"] {
+    --accent: #4f8cff;
+    --accent-hover: #6aa0ff;
+    --accent-dim: rgba(79, 140, 255, 0.08);
+    --accent-border: rgba(79, 140, 255, 0.2);
+    --accent-glow: rgba(79,140,255,0.9);
+    --accent-glow-soft: rgba(79,140,255,0.45);
+    --accent-text: #fff;
+    --accent-radial: rgba(79,140,255,0.05);
+    --lit-bg: #0d1020;
+
+    --bg: #0a0a0f;
+    --surface: #0f0f18;
+    --surface-2: #14141f;
+    --surface-3: #1a1a28;
+    --border: rgba(255,255,255,0.06);
+    --border-strong: rgba(255,255,255,0.10);
+    --text: #dcdce8;
+    --text-muted: #6b6b88;
+    --text-dim: #3e3e55;
+    --nav-bg: rgba(10,10,15,0.92);
+    --terminal-bg: #060610;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.5s;
+  }
+
+  /* ── MODE TOGGLE ──────────────────────────────────────────────── */
+  .mode-content { display: none; }
+  [data-mode="client"] .client-only { display: contents; }
+  [data-mode="agence"] .agence-only { display: contents; }
+
+  /* ── SLIDER TOGGLE ────────────────────────────────────────────── */
+  .mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    padding: 3px 4px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+  .mode-switch-option {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 14px;
+    border-radius: 100px;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+  .mode-switch-option.active { color: var(--white); }
+  .mode-switch-pill {
+    position: absolute;
+    top: 3px;
+    height: calc(100% - 6px);
+    background: var(--accent);
+    border-radius: 100px;
+    transition: left 0.3s ease, width 0.3s ease, background 0.3s;
+    z-index: 0;
+  }
+
+  /* ── NAV ───────────────────────────────────────────────────────── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.5s;
+  }
+  .nav-left { display: flex; align-items: center; gap: 32px; }
+  .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
+  .nav-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; transition: color 0.5s; }
+  .nav-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: color 0.5s, text-shadow 0.5s; }
+  .nav-links { display: flex; gap: 4px; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 5px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
+  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .btn-nav { font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 7px 16px; border-radius: var(--radius-sm); border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: all 0.3s; }
+  .btn-nav-ghost { background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-nav-ghost:hover { background: var(--surface-3); }
+  .btn-nav-primary { background: var(--accent); color: var(--accent-text); }
+  .btn-nav-primary:hover { background: var(--accent-hover); }
+
+  /* ── HERO ──────────────────────────────────────────────────────── */
+  .hero { max-width: 900px; margin: 0 auto; padding: 96px 32px 80px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-border); padding: 4px 12px; border-radius: 100px; margin-bottom: 32px; transition: all 0.5s; }
+
+  .hero-title {
+    font-size: clamp(38px, 5.5vw, 68px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .hero-title .hero-intro {
+    display: block;
+    font-size: clamp(12px, 1.2vw, 14px);
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .hero-title .fdp-static {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Client scrub animation */
+  .hero-title .fdp-scrub-char {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .hero-title .fdp-scrub-char.ellipsis {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .hero-title .fdp-scrub-char.projet-word {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Agence swap animation */
+  .hero-word-swap { display: inline-block; position: relative; }
+  .hero-word-chef {
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .hero-word-fils {
+    display: inline-block;
+    position: absolute;
+    left: 0; top: 0;
+    white-space: nowrap;
+    color: var(--accent);
+    text-shadow: 0 0 40px var(--accent-glow-soft);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .hero-word-swap.revealed .hero-word-chef { opacity: 0; transform: translateY(-6px); }
+  .hero-word-swap.revealed .hero-word-fils { opacity: 1; transform: translateY(0); }
+
+  .hero-reveal-hint {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 1;
+    transition: opacity 0.4s;
+  }
+  .hero-reveal-hint.hidden { opacity: 0; pointer-events: none; }
+  .hero-reveal-hint::before { content: '↓'; font-size: 10px; animation: bounce-hint 1.5s infinite; }
+
+  .hero-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-bottom: 40px; }
+  .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 10px 20px; border-radius: var(--radius-sm); background: var(--accent); color: var(--accent-text); border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary { font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 10px 20px; border-radius: var(--radius-sm); background: transparent; color: var(--text); border: 1px solid var(--border-strong); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
+  .btn-secondary:hover { background: var(--surface-2); }
+  .hero-meta { display: flex; gap: 24px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-val { font-size: 22px; font-weight: 600; color: var(--white); }
+  .hero-meta-label { font-size: 12px; color: var(--text-muted); }
+
+  /* ── SECTIONS ──────────────────────────────────────────────────── */
+  .section { max-width: 900px; margin: 0 auto; padding: 64px 32px; border-top: 1px solid var(--border); }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 12px; }
+  .section-title { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--white); margin-bottom: 12px; line-height: 1.25; }
+  .section-desc { font-size: 14px; color: var(--text-muted); max-width: 520px; line-height: 1.7; margin-bottom: 40px; }
+
+  /* ── PAIN GRID ─────────────────────────────────────────────────── */
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .pain-item { background: var(--surface); padding: 24px; transition: background 0.3s; }
+  .pain-item:hover { background: var(--surface-2); }
+  .pain-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--surface-3); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-size: 14px; margin-bottom: 14px; }
+  .pain-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 6px; }
+  .pain-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .pain-quote { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text-dim); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); font-style: italic; }
+
+  /* ── AUDIT / MATCHING CARD ─────────────────────────────────────── */
+  .audit-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 16px; }
+  .audit-card-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .audit-card-title { font-size: 14px; font-weight: 500; color: var(--white); display: flex; align-items: center; gap: 10px; }
+  .tag { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 100px; }
+  .tag-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); transition: all 0.5s; }
+  .tag-grey { background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
+  .audit-card-body { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .audit-item-title { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .audit-item-val { font-size: 13px; color: var(--text); line-height: 1.5; }
+
+  /* ── OUTCOMES ──────────────────────────────────────────────────── */
+  .outcomes-wrapper {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 0;
+    margin-top: 8px;
+    align-items: start;
+  }
+  .audit-arrow-svg {
+    width: 60px;
+    height: 300px;
+    flex-shrink: 0;
+  }
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .outcome-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  }
+  .outcome-card.lit {
+    border-color: var(--accent-border);
+    background: var(--lit-bg);
+    box-shadow: 0 0 0 1px var(--accent-border);
+  }
+  .outcome-card:hover { border-color: var(--border-strong); background: var(--surface-2); }
+  .outcome-icon { font-size: 18px; margin-bottom: 12px; }
+  .outcome-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 6px; }
+  .outcome-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── PRICE BLOCK ──────────────────────────────────────────────── */
+  .price-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 32px; }
+  .price-block-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+  .price-block-body { display: flex; align-items: center; gap: 0; padding: 0; }
+  .price-tier { flex: 1; padding: 24px; }
+  .price-tier-amount { font-size: 36px; font-weight: 600; color: var(--white); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
+  .price-tier-label { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .price-tier-detail { font-size: 12px; color: var(--text-muted); }
+  .price-tier:first-child { border-right: 1px solid var(--border); }
+  .price-tier-sep { font-size: 18px; color: var(--text-dim); padding: 0 4px; flex-shrink: 0; }
+  .price-block-footer { padding: 10px 24px; font-size: 11px; color: var(--text-dim); border-top: 1px solid var(--border); background: var(--surface-2); letter-spacing: 0.04em; }
+  /* Single-price variant (agence) */
+  .price-block-single { display: flex; align-items: center; padding: 24px; gap: 24px; }
+  .price-block-amount { font-size: 48px; font-weight: 600; color: var(--white); letter-spacing: -0.03em; line-height: 1; }
+  .price-block-detail { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+  .price-block-detail strong { color: var(--text); font-weight: 500; }
+
+  /* ── PLANS ─────────────────────────────────────────────────────── */
+  .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .plan-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; transition: border-color 0.15s; }
+  .plan-card:hover { border-color: var(--border-strong); }
+  .plan-card.featured { border-color: var(--accent-border); background: var(--lit-bg); }
+  .plan-name { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .plan-card.featured .plan-name { color: var(--accent); }
+  .plan-price { font-size: 36px; font-weight: 600; color: var(--white); letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+  .plan-period { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; }
+  .plan-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+  .plan-card.featured .plan-divider { background: var(--accent-border); }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+  .plan-feature { font-size: 13px; color: var(--text-muted); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+  .plan-feature-check { color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+  .plan-ideal { font-size: 11px; color: var(--text-dim); font-style: italic; margin-bottom: 16px; padding: 8px 12px; background: var(--surface-3); border-radius: var(--radius-sm); line-height: 1.5; }
+  .plan-cta { display: block; text-align: center; font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 9px 16px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.15s; cursor: pointer; border: none; }
+  .plan-cta-default { background: var(--surface-3); color: var(--text); border: 1px solid var(--border-strong); }
+  .plan-cta-default:hover { background: var(--surface-2); }
+  .plan-cta-featured { background: var(--accent); color: var(--accent-text); }
+  .plan-cta-featured:hover { background: var(--accent-hover); }
+
+  /* ── CONDITIONS ────────────────────────────────────────────────── */
+  .conditions-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-top: 16px; }
+  .conditions-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 14px; }
+  .conditions-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .conditions-item { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+  .conditions-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; transition: background 0.5s; }
+
+  /* ── TERMINAL ──────────────────────────────────────────────────── */
+  .terminal { background: var(--terminal-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 32px; }
+  .terminal-header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 10px 16px; display: flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+  .terminal-filename { font-size: 11px; color: var(--text-dim); margin-left: 10px; font-family: 'DM Mono', monospace; }
+  .terminal-body { padding: 20px 24px; font-family: 'DM Mono', monospace; font-size: 12px; line-height: 2; }
+  .t-line { display: block; }
+  .t-prompt { color: var(--accent); user-select: none; transition: color 0.5s; }
+  .t-cmd { color: var(--text); }
+  .t-comment { color: var(--text-dim); }
+  .t-out { color: #888; }
+  .t-success { color: var(--accent); transition: color 0.5s; }
+  .t-warn { color: #f0a500; }
+  .t-blink::after { content: '▋'; color: var(--accent); animation: blink 1s infinite; }
+
+  /* ── CTA ───────────────────────────────────────────────────────── */
+  .cta-section { max-width: 900px; margin: 0 auto; padding: 80px 32px; border-top: 1px solid var(--border); }
+  .cta-inner { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 56px 48px; text-align: center; position: relative; overflow: hidden; }
+  .cta-inner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% -10%, var(--accent-radial) 0%, transparent 60%); pointer-events: none; transition: background 0.5s; }
+  .cta-title { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+  .cta-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+  .cta-sub2 { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; font-style: italic; }
+  .cta-hint { font-size: 12px; color: var(--text-dim); margin-top: 16px; }
+
+  /* ── FOOTER ────────────────────────────────────────────────────── */
+  footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { display: flex; flex-direction: column; line-height: 1.15; }
+  .footer-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; }
+  .footer-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: all 0.5s; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links span { font-size: 12px; color: var(--text-dim); }
+  .footer-right { font-size: 12px; color: var(--text-dim); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
+
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes bounce-hint { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+
+  @media (max-width: 640px) {
+    .pain-grid, .outcomes-grid, .plans-grid { grid-template-columns: 1fr; }
+    .audit-card-body { grid-template-columns: 1fr; }
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }
+    .hero, .section, .cta-section { padding-left: 16px; padding-right: 16px; }
+    .cta-inner { padding: 32px 24px; }
+    .outcomes-wrapper { grid-template-columns: 40px 1fr; }
+    .audit-arrow-svg { width: 40px; }
+    .mode-switch-option { font-size: 10px; padding: 4px 10px; }
+  }
+</style>
+</head>
+<body data-mode="client">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAV
+     ═══════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo">
+      <span class="logo-line"><span class="initial">F</span>ils</span>
+      <span class="logo-line"><span class="initial">d</span>e</span>
+      <span class="logo-line"><span class="initial">P</span>rojet</span>
+    </div>
+    <ul class="nav-links">
+      <li class="mode-content client-only"><a href="#audit">Audit</a></li>
+      <li class="mode-content client-only"><a href="#plans">Formules</a></li>
+      <li class="mode-content agence-only"><a href="#audit">Matching</a></li>
+      <li class="mode-content agence-only"><a href="#plans">Tarifs</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <div class="mode-switch" id="mode-switch">
+      <span class="mode-switch-option active" data-mode="client">Client</span>
+      <span class="mode-switch-option" data-mode="agence">Agence</span>
+      <div class="mode-switch-pill" id="mode-pill"></div>
+    </div>
+    <span class="mode-content client-only">
+      <a href="#plans" class="btn-nav btn-nav-ghost">Voir les formules</a>
+    </span>
+    <span class="mode-content agence-only">
+      <a href="#plans" class="btn-nav btn-nav-ghost">Voir les tarifs</a>
+    </span>
+    <span class="mode-content client-only">
+      <a href="#contact" class="btn-nav btn-nav-primary">Prendre RDV</a>
+    </span>
+    <span class="mode-content agence-only">
+      <a href="#contact" class="btn-nav btn-nav-primary">Caler un call</a>
+    </span>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="hero">
+  <!-- Client hero -->
+  <div class="mode-content client-only">
+    <div class="hero-eyebrow">Freelance indépendant — Maintenance web</div>
+    <h1 class="hero-title">
+      <span class="hero-intro">Quand tu reçois le mail de l'agence qui te fait dire…</span>
+      « <span class="fdp-static">Fils de</span><span id="fdp-scrub"></span> »
+    </h1>
+    <div class="hero-reveal-hint" id="reveal-hint-client">scroll pour révéler</div>
+    <p class="hero-desc">
+      C'est exactement là qu'intervient Fils de Projet. Seul aux commandes, direct, sans intermédiaire. Ton site géré sérieusement — WordPress, Shopify, CMS no-code.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Démarrer par un audit →</a>
+      <a href="#plans" class="btn-secondary">Voir les formules</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">500–900€</span>
+        <span class="hero-meta-label">Audit complet</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">5–7 j</span>
+        <span class="hero-meta-label">Délai de livraison</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">0</span>
+        <span class="hero-meta-label">Engagement requis</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">1</span>
+        <span class="hero-meta-label">Interlocuteur</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Agence hero -->
+  <div class="mode-content agence-only">
+    <div class="hero-eyebrow">Renfort technique — Partenaire agence</div>
+    <h1 class="hero-title">
+      <span class="hero-intro">Quand vos équipes ne suffisent plus, il vous faut un</span>
+      <span class="hero-word-swap" id="hero-swap">
+        <span class="hero-word-chef">Chef</span>
+        <span class="hero-word-fils">Fils</span>
+      </span>
+      <span class="fdp-static"> de Projet.</span>
+    </h1>
+    <div class="hero-reveal-hint" id="reveal-hint-agence">scroll pour révéler</div>
+    <p class="hero-desc">
+      Senior 12 ans. Shopify, WordPress, WooCommerce, PrestaShop, CMS headless. Je me glisse dans votre organisation — en white label, co-brandé, ou comme relais terrain chez votre client.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Caler un call de matching →</a>
+      <a href="#plans" class="btn-secondary">Voir les tarifs</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">12 ans</span>
+        <span class="hero-meta-label">d'expérience terrain</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">30 min</span>
+        <span class="hero-meta-label">Call de matching</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">3</span>
+        <span class="hero-meta-label">Modes d'intégration</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">1</span>
+        <span class="hero-meta-label">Interlocuteur senior</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAIN SECTION
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="why">
+  <div class="mode-content client-only">
+    <div class="section-label">Pourquoi Fils de Projet</div>
+    <h2 class="section-title">Ce que les agences font mal.</h2>
+    <p class="section-desc">Tu paies pour un service. Tu obtiens de la bureaucratie.</p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <div class="pain-icon">⏳</div>
+        <div class="pain-title">Les délais</div>
+        <div class="pain-desc">3 semaines pour modifier un texte. Quand t'as un interlocuteur disponible.</div>
+        <div class="pain-quote">"C'est en cours de traitement."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">👻</div>
+        <div class="pain-title">Les interlocuteurs fantômes</div>
+        <div class="pain-desc">Le chef de projet change tous les 6 mois. Personne ne connaît ton site.</div>
+        <div class="pain-quote">"Je reprends le dossier, tu peux me re-expliquer ?"</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">💸</div>
+        <div class="pain-title">L'opacité</div>
+        <div class="pain-desc">Tu paies sans savoir ce que ça couvre. Les devis arrivent après les surprises.</div>
+        <div class="pain-quote">"Ce n'était pas inclus dans le forfait initial."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🔇</div>
+        <div class="pain-title">Le silence radio</div>
+        <div class="pain-desc">Ton site plante un dimanche. Tu l'apprends le lundi en ouvrant tes mails.</div>
+        <div class="pain-quote">"On a été alerté, on traite ça en priorité."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🗃️</div>
+        <div class="pain-title">La stack surdimensionnée</div>
+        <div class="pain-desc">Plugins inutiles, hébergement trop cher, abonnements qui tournent dans le vide.</div>
+        <div class="pain-quote">"On a mis en place une solution robuste et scalable."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">📋</div>
+        <div class="pain-title">Le process lourd</div>
+        <div class="pain-desc">Brief → validation → devis → go → livraison. Pour chaque modification mineure.</div>
+        <div class="pain-quote">"Il faut qu'on fasse un point en visio d'abord."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mode-content agence-only">
+    <div class="section-label">Pourquoi Fils de Projet</div>
+    <h2 class="section-title">Ce que le recrutement ne règle pas.</h2>
+    <p class="section-desc">Un CDI prend 3 mois. Une agence sous-traitante prend du budget. Un freelance junior prend du risque.</p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <div class="pain-icon">⏳</div>
+        <div class="pain-title">Le pic de charge imprévu</div>
+        <div class="pain-desc">Trois projets Shopify en parallèle, un départ inattendu, et un client qui attend ses specs.</div>
+        <div class="pain-quote">"On est en sous-capacité ce trimestre."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🧩</div>
+        <div class="pain-title">La compétence manquante</div>
+        <div class="pain-desc">Votre équipe maîtrise le front. La migration WooCommerce vers Shopify headless, c'est une autre histoire.</div>
+        <div class="pain-quote">"On n'a personne en interne sur ce stack."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🔗</div>
+        <div class="pain-title">Le client qui vous court-circuite</div>
+        <div class="pain-desc">Il prend des décisions techniques sans vous. Les specs changent. Le projet dérive.</div>
+        <div class="pain-quote">"Ils ont contacté un dev directement, on a appris après."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">📉</div>
+        <div class="pain-title">La dette technique héritée</div>
+        <div class="pain-desc">Vous reprenez un projet livré par une autre agence. Stack indocumentée, plugins en vrac, zero process.</div>
+        <div class="pain-quote">"On reprend un site dont on n'a aucun historique."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🏗️</div>
+        <div class="pain-title">L'offre technique à étoffer</div>
+        <div class="pain-desc">Vos clients demandent du Shopify Plus, du CMS headless, des automatisations. Votre core team n'est pas là-dessus.</div>
+        <div class="pain-quote">"On aimerait proposer ça mais on n'a pas la ressource."</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🎯</div>
+        <div class="pain-title">Le projet sans PO disponible</div>
+        <div class="pain-desc">Le dev attend les specs. Le client ne sait pas prioriser. Personne ne cadre les sprints.</div>
+        <div class="pain-quote">"On a besoin de quelqu'un pour tenir la roadmap."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     AUDIT / MATCHING SECTION
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="audit">
+  <!-- Client: Audit -->
+  <div class="mode-content client-only">
+    <div class="section-label">Première étape</div>
+    <h2 class="section-title">L'audit qui dit la vérité.</h2>
+    <p class="section-desc">Avant de toucher quoi que ce soit, je te dis la vérité sur ton site. Ce qui coûte trop cher. Ce qui fout tout en l'air. Ce qu'on fait ensuite.</p>
+
+    <div class="audit-card">
+      <div class="audit-card-header">
+        <div class="audit-card-title">
+          Périmètre de l'audit
+          <span class="tag tag-accent">Inclus</span>
+        </div>
+        <span class="tag tag-grey">5–7 jours ouvrés</span>
+      </div>
+      <div class="audit-card-body">
+        <div>
+          <div class="audit-item-title">Technique</div>
+          <div class="audit-item-val">Core Web Vitals, sécurité, mises à jour manquantes, bugs visuels et fonctionnels</div>
+        </div>
+        <div>
+          <div class="audit-item-title">SEO & Tracking</div>
+          <div class="audit-item-val">Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké</div>
+        </div>
+        <div>
+          <div class="audit-item-title">Analyse des coûts</div>
+          <div class="audit-item-val">Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outcomes-wrapper" id="outcomes-wrapper-client">
+      <svg class="audit-arrow-svg" viewBox="0 0 60 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line class="arrow-trunk" x1="30" y1="0" x2="30" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="220" stroke-dashoffset="220"/>
+        <line class="arrow-b1" x1="30" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+        <line class="arrow-b2" x1="30" y1="140" x2="60" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+        <line class="arrow-b3" x1="30" y1="220" x2="60" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+      </svg>
+      <div class="outcomes-grid">
+        <div class="outcome-card oc-1">
+          <div class="outcome-icon">⚡</div>
+          <div class="outcome-title">One-shot de correction</div>
+          <div class="outcome-desc">Site globalement sain. Quelques problèmes ciblés à régler, puis terminé.</div>
+        </div>
+        <div class="outcome-card oc-2">
+          <div class="outcome-icon">🔄</div>
+          <div class="outcome-title">Suivi long terme</div>
+          <div class="outcome-desc">Le site a de la valeur et nécessite un accompagnement régulier. On met en place un plan.</div>
+        </div>
+        <div class="outcome-card oc-3">
+          <div class="outcome-icon">🚀</div>
+          <div class="outcome-title">Refonte ou migration</div>
+          <div class="outcome-desc">La stack actuelle est inadaptée ou trop coûteuse. On évalue ensemble la meilleure option.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-block">
+      <div class="price-block-header">
+        <span class="section-label" style="margin:0">Tarif audit</span>
+        <span class="tag tag-grey">Sans engagement</span>
+      </div>
+      <div class="price-block-body">
+        <div class="price-tier">
+          <div class="price-tier-amount">500 €</div>
+          <div class="price-tier-label">Site vitrine · CMS standard</div>
+          <div class="price-tier-detail">Moins de 20 pages · stack simple</div>
+        </div>
+        <div class="price-tier-sep">→</div>
+        <div class="price-tier">
+          <div class="price-tier-amount">900 €</div>
+          <div class="price-tier-label">E-commerce · stack complexe</div>
+          <div class="price-tier-detail">WooCommerce, Shopify · plugins nombreux</div>
+        </div>
+      </div>
+      <div class="price-block-footer">Livraison 5–7 jours ouvrés · HT</div>
+    </div>
+  </div>
+
+  <!-- Agence: Matching -->
+  <div class="mode-content agence-only">
+    <div class="section-label">Première étape</div>
+    <h2 class="section-title">Un call. On voit si ça matche.</h2>
+    <p class="section-desc">Pas de devis à l'aveugle. On prend 30 minutes pour qualifier le besoin, comprendre votre contexte, et voir concrètement comment je peux m'intégrer.</p>
+
+    <div class="audit-card">
+      <div class="audit-card-header">
+        <div class="audit-card-title">
+          Ce qu'on qualifie ensemble
+          <span class="tag tag-accent">30 min</span>
+        </div>
+        <span class="tag tag-grey">Sans engagement</span>
+      </div>
+      <div class="audit-card-body">
+        <div>
+          <div class="audit-item-title">Contexte projet</div>
+          <div class="audit-item-val">Stack technique, état du projet, équipe en place, délais</div>
+        </div>
+        <div>
+          <div class="audit-item-title">Besoins réels</div>
+          <div class="audit-item-val">Renfort ponctuel, montée en charge, compétence manquante, PO, conseil</div>
+        </div>
+        <div>
+          <div class="audit-item-title">Mode d'intégration</div>
+          <div class="audit-item-val">White label, co-brandé ou relais terrain — on choisit ensemble ce qui fait sens</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outcomes-wrapper" id="outcomes-wrapper-agence">
+      <svg class="audit-arrow-svg" viewBox="0 0 60 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <line class="arrow-trunk" x1="30" y1="0" x2="30" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="220" stroke-dashoffset="220"/>
+        <line class="arrow-b1" x1="30" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+        <line class="arrow-b2" x1="30" y1="140" x2="60" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+        <line class="arrow-b3" x1="30" y1="220" x2="60" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
+      </svg>
+      <div class="outcomes-grid">
+        <div class="outcome-card oc-1">
+          <div class="outcome-icon">🕶️</div>
+          <div class="outcome-title">Renfort — White label</div>
+          <div class="outcome-desc">J'intègre vos équipes sous votre marque. Vos clients ne savent pas que j'existe. Votre process, votre image.</div>
+        </div>
+        <div class="outcome-card oc-2">
+          <div class="outcome-icon">🛰️</div>
+          <div class="outcome-title">Satellite — Co-brandé</div>
+          <div class="outcome-desc">J'interviens chez votre client en mon nom, dans le cadre de votre mission. Vous gardez le contrôle, je prends la technique.</div>
+        </div>
+        <div class="outcome-card oc-3">
+          <div class="outcome-icon">📡</div>
+          <div class="outcome-title">Ambassadeur — Relais terrain</div>
+          <div class="outcome-desc">Je suis chez votre client, je fluidifie votre relation avec lui. Je fais avancer les sujets, je suis votre interface de confiance sur place.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-block">
+      <div class="price-block-header">
+        <span class="section-label" style="margin:0">Call de matching</span>
+        <span class="tag tag-grey">Imputable sur la première mission</span>
+      </div>
+      <div class="price-block-single">
+        <div class="price-block-amount">80 €</div>
+        <div class="price-block-detail">
+          <strong>30 minutes · visio</strong><br>
+          Qualification du besoin, présentation des compétences, choix du mode d'intégration.<br>
+          Imputable sur la première facture de mission.
+        </div>
+      </div>
+      <div class="price-block-footer">HT · Sans engagement · Remboursé si on travaille ensemble</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PLANS SECTION
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="section" id="plans">
+  <!-- Client: Formules -->
+  <div class="mode-content client-only">
+    <div class="section-label">Formules</div>
+    <h2 class="section-title">Pas d'abonnement piège.</h2>
+    <p class="section-desc">Pas de préavis contractuel. Tu restes parce que c'est bon, pas parce que t'as signé quelque chose.</p>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Essentiel</div>
+        <div class="plan-price">290€</div>
+        <div class="plan-period">/ mois HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Mises à jour CMS, thème, plugins</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Monitoring uptime + alertes</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> 1h d'intervention mensuelle</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 48h ouvrées</li>
+        </ul>
+        <div class="plan-ideal">Site vitrine stable — peu d'évolutions attendues.</div>
+        <a href="#contact" class="plan-cta plan-cta-default">Démarrer</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-name">Actif <span class="tag tag-accent">Recommandé</span></div>
+        <div class="plan-price">590€</div>
+        <div class="plan-period">/ mois HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tout l'Essentiel inclus</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> 4h de dev / modifications / mois</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rapport mensuel + recommandations</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 24h ouvrées</li>
+        </ul>
+        <div class="plan-ideal">Site actif — des besoins réguliers de contenu ou d'évolutions légères.</div>
+        <a href="#contact" class="plan-cta plan-cta-featured">Démarrer</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Partenaire</div>
+        <div class="plan-price">990€</div>
+        <div class="plan-period">/ mois HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tout l'Actif inclus</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> 8h de dev / mois</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Canal Slack dédié</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 4h · SLA critique 24h</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Roadmap proactive mensuelle</li>
+        </ul>
+        <div class="plan-ideal">E-commerçants, startups — le site est un levier business central.</div>
+        <a href="#contact" class="plan-cta plan-cta-default">Démarrer</a>
+      </div>
+    </div>
+
+    <div class="conditions-block">
+      <div class="conditions-title">Conditions</div>
+      <ul class="conditions-list">
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Aucun engagement de durée — tu pars quand tu veux, sans préavis.</span>
+        </li>
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Les heures non consommées sont reportées au mois suivant.</span>
+        </li>
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Les dépassements sont rattrapés — déduits de ton crédit disponible, sinon facturés au TJM (350–450 € / j).</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Agence: Tarifs -->
+  <div class="mode-content agence-only">
+    <div class="section-label">Tarifs</div>
+    <h2 class="section-title">Un TJM selon le rôle. Rien de plus.</h2>
+    <p class="section-desc">Pas de forfait opaque. Le tarif dépend du niveau d'engagement — exécution, pilotage ou conseil stratégique.</p>
+
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Q/A</div>
+        <div class="plan-price">450€</div>
+        <div class="plan-period">/ jour HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tests fonctionnels et techniques</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Recette de livrables</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et validation de déploiement</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rapports de non-conformité</li>
+        </ul>
+        <div class="plan-ideal">Renfort sur un déploiement ou une phase de recette critique.</div>
+        <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-name">PO <span class="tag tag-accent">Fréquent</span></div>
+        <div class="plan-price">600€</div>
+        <div class="plan-period">/ jour HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et animation des sprints</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Pilotage des développeurs</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rédaction et priorisation des tickets</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Q/A intégré</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Reporting client</li>
+        </ul>
+        <div class="plan-ideal">Pilotage opérationnel d'un projet ou d'une équipe technique.</div>
+        <a href="#contact" class="plan-cta plan-cta-featured">Caler un call</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Conseil</div>
+        <div class="plan-price">750€</div>
+        <div class="plan-period">/ jour HT</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Cadrage et gestion de roadmap</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Arbitrages budget / périmètre</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> PO inclus</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Recommandations stack technique</li>
+          <li class="plan-feature"><span class="plan-feature-check">✓</span> Interface stratégique avec le client final</li>
+        </ul>
+        <div class="plan-ideal">Engagement stratégique sur un projet structurant ou un compte clé.</div>
+        <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
+      </div>
+    </div>
+
+    <div class="conditions-block">
+      <div class="conditions-title">Conditions</div>
+      <ul class="conditions-list">
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Facturation au réel — à la journée ou demi-journée selon le contexte.</span>
+        </li>
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Disponibilité confirmée à l'issue du call de matching — pas de réservation à l'aveugle.</span>
+        </li>
+        <li class="conditions-item">
+          <span class="conditions-dot"></span>
+          <span>Engagement minimum : aucun. Missions courtes (1–2 j) ou rétainer mensuel, les deux sont possibles.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Terminal — shared structure, different content -->
+  <div class="mode-content client-only">
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="terminal-filename">fdp-audit.sh</span>
+      </div>
+      <div class="terminal-body">
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./audit --url votre-site.fr</span></span>
+        <span class="t-line t-comment"># Analyse en cours — je regarde tout. Vraiment.</span>
+        <span class="t-line t-out">✓  Core Web Vitals analysés</span>
+        <span class="t-line t-warn">⚠  4 plugins inactifs détectés  →  économie possible : 47€/mois</span>
+        <span class="t-line t-warn">⚠  GTM mal configuré  →  3 événements non trackés</span>
+        <span class="t-line t-warn">⚠  SSL expire dans 12 jours</span>
+        <span class="t-line t-out">✓  Hébergement surdimensionné  →  migration recommandée</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./rapport --output pdf --ton honnête</span></span>
+        <span class="t-line t-success">→  Livraison estimée : 5 jours ouvrés</span>
+        <span class="t-line t-success">→  Économies identifiées : 113€/mois</span>
+        <span class="t-line t-success">→  Recommandation : Formule Actif + migration hébergeur</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line t-comment"># Évolutions identifiées</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./todo --type evolutions</span></span>
+        <span class="t-line t-out">[ ]  flux Google Shopping  →  finaliser mapping produits</span>
+        <span class="t-line t-out">[ ]  checkout  →  bandeau délais de livraison</span>
+        <span class="t-line t-out">[ ]  facturation studio  →  automatiser envoi mensuel</span>
+        <span class="t-line t-warn">[ ]  RDV Agence — brief refonte  →  17h00 à confirmer</span>
+        <span class="t-line t-comment"># 4 tâches · ~3h estimées · inclus dans formule Partenaire</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mode-content agence-only">
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="terminal-filename">fdp-stack.sh</span>
+      </div>
+      <div class="terminal-body">
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./profil --export competences</span></span>
+        <span class="t-line t-comment"># Stack technique — Senior 12 ans</span>
+        <span class="t-line t-success">✓  E-commerce       →  Shopify, Shopify Plus, WooCommerce, PrestaShop</span>
+        <span class="t-line t-success">✓  CMS headless      →  Storyblok, Contentful, Strapi</span>
+        <span class="t-line t-success">✓  No-code / métier  →  Airtable, Softr, Notion</span>
+        <span class="t-line t-success">✓  Automatisation    →  n8n, Make</span>
+        <span class="t-line t-success">✓  CMS classiques    →  WordPress, ACF, Elementor</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./modes --intégration agence</span></span>
+        <span class="t-line t-out">[ renfort ]     White label — sous votre marque, dans vos process</span>
+        <span class="t-line t-out">[ satellite ]   Co-brandé — chez votre client, dans votre mission</span>
+        <span class="t-line t-out">[ ambassadeur ] Relais terrain — fluidifie agence ↔ client</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./matching --disponibilite</span></span>
+        <span class="t-line t-success">→  Call 30 min · 80 € · imputable sur mission</span>
+        <span class="t-line t-success">→  Réponse sous 24h ouvrées</span>
+        <span class="t-line t-success">→  Basé Marseille · remote OK · déplacement possible</span>
+        <span class="t-line">&nbsp;</span>
+        <span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CTA SECTION
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="mode-content client-only">
+      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;">On commence par un audit.</div>
+      <h2 class="cta-title">30 min de call.<br>Je regarde. Je te dis ce que j'en pense. Vraiment.</h2>
+      <p class="cta-sub">Pas de devis bullshit. Pas d'engagement.</p>
+      <p class="cta-sub2">Seul aux commandes — sans intermédiaire, sans process lourd.</p>
+      <a href="https://calendly.com/fdp" class="btn-primary" style="font-size: 15px; padding: 12px 28px;">
+        Réserver un créneau →
+      </a>
+      <p class="cta-hint">Réponse sous 24h · WordPress · Shopify · WooCommerce · CMS no-code</p>
+    </div>
+    <div class="mode-content agence-only">
+      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;">On commence par un call.</div>
+      <h2 class="cta-title">30 min pour voir si ça matche.<br>Pas de pitch. Que du concret.</h2>
+      <p class="cta-sub">Vous présentez le contexte. Je vous dis ce que je peux faire et comment.</p>
+      <p class="cta-sub2">Senior autonome — aucune supervision nécessaire, aucun onboarding à rallonge.</p>
+      <a href="https://calendly.com/fdp" class="btn-primary" style="font-size: 15px; padding: 12px 28px;">
+        Réserver un créneau →
+      </a>
+      <p class="cta-hint">80 € · imputable · Shopify · WordPress · CMS headless · Automatisation</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    <span class="logo-line"><span class="initial">F</span>ils</span>
+    <span class="logo-line"><span class="initial">d</span>e</span>
+    <span class="logo-line"><span class="initial">P</span>rojet</span>
+  </div>
+  <div class="footer-links">
+    <div class="mode-content client-only">
+      <span>WordPress</span>
+      <span>Shopify</span>
+      <span>WooCommerce</span>
+      <span>CMS no-code</span>
+    </div>
+    <div class="mode-content agence-only">
+      <span>Shopify</span>
+      <span>CMS headless</span>
+      <span>No-code</span>
+      <span>Automatisation</span>
+    </div>
+  </div>
+  <div class="footer-right">© 2026</div>
+</footer>
+
+<script>
+  // ══════════════════════════════════════════════════════════════
+  // MODE SWITCH
+  // ══════════════════════════════════════════════════════════════
+  const body = document.body;
+  const switchEl = document.getElementById('mode-switch');
+  const pill = document.getElementById('mode-pill');
+  const options = switchEl.querySelectorAll('.mode-switch-option');
+
+  function setMode(mode) {
+    body.dataset.mode = mode;
+    options.forEach(o => o.classList.toggle('active', o.dataset.mode === mode));
+    positionPill();
+    // Re-init scroll-based animations for the active mode
+    updateClientScrub();
+    updateAgenceSwap();
+    updateArrows();
+  }
+
+  function positionPill() {
+    const active = switchEl.querySelector('.mode-switch-option.active');
+    if (!active) return;
+    pill.style.left = active.offsetLeft + 'px';
+    pill.style.width = active.offsetWidth + 'px';
+  }
+
+  options.forEach(o => {
+    o.addEventListener('click', () => setMode(o.dataset.mode));
+  });
+
+  // Init pill position
+  requestAnimationFrame(positionPill);
+  window.addEventListener('resize', positionPill);
+
+  // ══════════════════════════════════════════════════════════════
+  // CLIENT: FDP SCRUB (scroll-reveal dots)
+  // ══════════════════════════════════════════════════════════════
+  const scrubContainer = document.getElementById('fdp-scrub');
+  const parts = [
+    { char: '.', cls: 'ellipsis' },
+    { char: '.', cls: 'ellipsis' },
+    { char: '.', cls: 'ellipsis' },
+    { char: ' Projet.', cls: 'projet-word' },
+  ];
+  parts.forEach(({ char, cls }) => {
+    const span = document.createElement('span');
+    span.className = 'fdp-scrub-char' + (cls ? ' ' + cls : '');
+    span.textContent = char;
+    scrubContainer.appendChild(span);
+  });
+  const scrubSpans = scrubContainer.querySelectorAll('.fdp-scrub-char');
+  const SCRUB_START = 20;
+  const SCRUB_END = 120;
+  const SCRUB_STEP = (SCRUB_END - SCRUB_START) / scrubSpans.length;
+
+  function updateClientScrub() {
+    const sy = window.scrollY;
+    scrubSpans.forEach((span, i) => {
+      span.style.opacity = sy >= SCRUB_START + i * SCRUB_STEP ? '1' : '0';
+    });
+    const hint = document.getElementById('reveal-hint-client');
+    if (hint) hint.classList.toggle('hidden', sy >= SCRUB_START);
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // AGENCE: HERO WORD SWAP
+  // ══════════════════════════════════════════════════════════════
+  const swapEl = document.getElementById('hero-swap');
+  const SWAP_THRESHOLD = 60;
+
+  function updateAgenceSwap() {
+    if (!swapEl) return;
+    const sy = window.scrollY;
+    if (sy >= SWAP_THRESHOLD) {
+      swapEl.classList.add('revealed');
+    } else {
+      swapEl.classList.remove('revealed');
+    }
+    const hint = document.getElementById('reveal-hint-agence');
+    if (hint) hint.classList.toggle('hidden', sy >= SWAP_THRESHOLD);
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // ARROW ANIMATIONS (works for both modes)
+  // ══════════════════════════════════════════════════════════════
+  const TRUNK_LEN = 220;
+  const BRANCH_LEN = 30;
+  const Y_B1 = 60, Y_B2 = 140, Y_B3 = 220;
+
+  function animateArrowSet(wrapper) {
+    if (!wrapper || wrapper.offsetParent === null) return; // skip if hidden
+    const trunk = wrapper.querySelector('.arrow-trunk');
+    const b1 = wrapper.querySelector('.arrow-b1');
+    const b2 = wrapper.querySelector('.arrow-b2');
+    const b3 = wrapper.querySelector('.arrow-b3');
+    const cards = wrapper.querySelectorAll('.outcome-card');
+    if (!trunk) return;
+
+    const rect = wrapper.getBoundingClientRect();
+    const cursorInWrapper = window.innerHeight * 0.20 - rect.top;
+    const progress = Math.max(0, Math.min(1, cursorInWrapper / (rect.height * 0.30)));
+
+    trunk.style.strokeDashoffset = TRUNK_LEN * (1 - progress);
+    const headY = progress * TRUNK_LEN;
+
+    [Y_B1, Y_B2, Y_B3].forEach((yPos, i) => {
+      const branch = [b1, b2, b3][i];
+      const card = cards[i];
+      if (!branch || !card) return;
+      const prog = Math.max(0, Math.min(1, (headY - yPos) / 40));
+      branch.style.strokeDashoffset = BRANCH_LEN * (1 - prog);
+      card.classList.toggle('lit', prog >= 1);
+    });
+  }
+
+  function updateArrows() {
+    animateArrowSet(document.getElementById('outcomes-wrapper-client'));
+    animateArrowSet(document.getElementById('outcomes-wrapper-agence'));
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // SCROLL LISTENER
+  // ══════════════════════════════════════════════════════════════
+  function onScroll() {
+    updateClientScrub();
+    updateAgenceSwap();
+    updateArrows();
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>
