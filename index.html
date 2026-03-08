@@ -281,13 +281,30 @@
     grid-template-columns: 60px 1fr;
     gap: 0;
     margin-top: 8px;
-    align-items: start;
+    align-items: stretch;
   }
-  .audit-arrow-svg {
+  .audit-arrow-col {
+    position: relative;
     width: 60px;
-    height: 300px;
-    flex-shrink: 0;
   }
+  .audit-arrow-trunk {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 1px;
+    height: 0;
+    background: var(--accent-border);
+    transition: height 0.6s ease;
+  }
+  .audit-arrow-branch {
+    position: absolute;
+    left: 30px;
+    height: 1px;
+    width: 0;
+    background: var(--accent-border);
+    transition: width 0.3s ease;
+  }
+  .audit-arrow-branch.visible { width: 30px; }
   .outcomes-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -382,115 +399,6 @@
   .cta-sub2 { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; font-style: italic; }
   .cta-hint { font-size: 12px; color: var(--text-dim); margin-top: 16px; }
 
-  /* ── SPLASH CHOOSER ───────────────────────────────────────────── */
-  .splash-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s ease, visibility 0.5s;
-  }
-  .splash-overlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  .splash-inner {
-    text-align: center;
-    max-width: 640px;
-    padding: 32px;
-    width: 100%;
-  }
-  .splash-inner .splash-logo {
-    display: inline-flex;
-    flex-direction: column;
-    line-height: 1.15;
-    margin-bottom: 16px;
-  }
-  .splash-inner .logo-line {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-  }
-  .splash-inner .initial {
-    font-size: 18px;
-    font-weight: 700;
-    color: #00c853;
-    text-shadow: 0 0 8px rgba(0,200,83,0.7), 0 0 20px rgba(0,200,83,0.35);
-    letter-spacing: 0;
-    line-height: 1;
-    margin-right: 2px;
-  }
-  .splash-tagline {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 48px;
-    letter-spacing: 0.02em;
-  }
-  .splash-question {
-    font-size: 24px;
-    font-weight: 300;
-    color: var(--text);
-    margin-bottom: 32px;
-    letter-spacing: -0.01em;
-  }
-  .splash-choices {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .splash-card {
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
-    border-radius: 12px;
-    padding: 36px 24px 28px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    font-family: inherit;
-    color: inherit;
-  }
-  .splash-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-  }
-  .splash-card--client:hover {
-    border-color: #00c853;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 40px -10px rgba(0,200,83,0.4);
-  }
-  .splash-card--agence:hover {
-    border-color: #4f8cff;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 40px -10px rgba(79,140,255,0.4);
-  }
-  .splash-icon {
-    font-size: 36px;
-    line-height: 1;
-  }
-  .splash-card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--white);
-  }
-  .splash-card--client:hover .splash-card-title { color: #00c853; }
-  .splash-card--agence:hover .splash-card-title { color: #4f8cff; }
-  .splash-card-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
   /* ── FOOTER ────────────────────────────────────────────────────── */
   footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; overflow: hidden; }
   .footer-logo { display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
@@ -515,9 +423,9 @@
     .hero, .section, .cta-section { padding-left: 16px; padding-right: 16px; }
     .cta-inner { padding: 32px 24px; }
     .outcomes-wrapper { grid-template-columns: 40px 1fr; }
-    .audit-arrow-svg { width: 40px; }
-    .splash-choices { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
-    .splash-card { padding: 28px 20px 24px; }
+    .audit-arrow-col { width: 40px; }
+    .audit-arrow-trunk { left: 20px; }
+    .audit-arrow-branch { left: 20px; }
     .mode-switch { bottom: 16px; right: 16px; }
     .mode-switch-option { font-size: 12px; padding: 7px 16px; }
     footer { flex-direction: column; text-align: center; padding: 20px 16px; gap: 8px; }
@@ -527,33 +435,6 @@
 </style>
 </head>
 <body data-mode="client">
-
-<!-- ═══════════════════════════════════════════════════════════════
-     SPLASH CHOOSER OVERLAY
-     ═══════════════════════════════════════════════════════════════ -->
-<div class="splash-overlay" id="splash-overlay">
-  <div class="splash-inner">
-    <div class="splash-logo">
-      <span class="logo-line"><span class="initial">F</span>ils</span>
-      <span class="logo-line"><span class="initial">d</span>e</span>
-      <span class="logo-line"><span class="initial">P</span>rojet</span>
-    </div>
-    <p class="splash-tagline">Maintenance web & développement senior</p>
-    <h2 class="splash-question">Vous êtes&hellip;</h2>
-    <div class="splash-choices">
-      <button class="splash-card splash-card--client" data-choose="client">
-        <span class="splash-icon">&#x1F464;</span>
-        <span class="splash-card-title">Client</span>
-        <span class="splash-card-desc">Vous avez un site web et cherchez un développeur fiable pour le maintenir et le faire évoluer.</span>
-      </button>
-      <button class="splash-card splash-card--agence" data-choose="agence">
-        <span class="splash-icon">&#x1F3E2;</span>
-        <span class="splash-card-title">Agence</span>
-        <span class="splash-card-desc">Vous êtes une agence et cherchez un freelance senior pour renforcer vos équipes.</span>
-      </button>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════════════════════════════
      NAV
@@ -795,12 +676,12 @@
     </div>
 
     <div class="outcomes-wrapper" id="outcomes-wrapper-client">
-      <svg class="audit-arrow-svg" viewBox="0 0 60 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <line class="arrow-trunk" x1="30" y1="0" x2="30" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="220" stroke-dashoffset="220"/>
-        <line class="arrow-b1" x1="30" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-        <line class="arrow-b2" x1="30" y1="140" x2="60" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-        <line class="arrow-b3" x1="30" y1="220" x2="60" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-      </svg>
+      <div class="audit-arrow-col">
+        <div class="audit-arrow-trunk"></div>
+        <div class="audit-arrow-branch" data-card="0"></div>
+        <div class="audit-arrow-branch" data-card="1"></div>
+        <div class="audit-arrow-branch" data-card="2"></div>
+      </div>
       <div class="outcomes-grid">
         <div class="outcome-card oc-1">
           <div class="outcome-icon">⚡</div>
@@ -873,12 +754,12 @@
     </div>
 
     <div class="outcomes-wrapper" id="outcomes-wrapper-agence">
-      <svg class="audit-arrow-svg" viewBox="0 0 60 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <line class="arrow-trunk" x1="30" y1="0" x2="30" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="220" stroke-dashoffset="220"/>
-        <line class="arrow-b1" x1="30" y1="60" x2="60" y2="60" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-        <line class="arrow-b2" x1="30" y1="140" x2="60" y2="140" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-        <line class="arrow-b3" x1="30" y1="220" x2="60" y2="220" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="30" stroke-dashoffset="30"/>
-      </svg>
+      <div class="audit-arrow-col">
+        <div class="audit-arrow-trunk"></div>
+        <div class="audit-arrow-branch" data-card="0"></div>
+        <div class="audit-arrow-branch" data-card="1"></div>
+        <div class="audit-arrow-branch" data-card="2"></div>
+      </div>
       <div class="outcomes-grid">
         <div class="outcome-card oc-1">
           <div class="outcome-icon">🕶️</div>
@@ -1197,30 +1078,6 @@
 
 <script>
   // ══════════════════════════════════════════════════════════════
-  // SPLASH CHOOSER
-  // ══════════════════════════════════════════════════════════════
-  const splashOverlay = document.getElementById('splash-overlay');
-  const splashCards = splashOverlay.querySelectorAll('.splash-card');
-  const floatingSwitch = document.getElementById('mode-switch');
-
-  // Hide floating switch while splash is visible
-  floatingSwitch.style.display = 'none';
-
-  splashCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const chosen = card.dataset.choose;
-      setMode(chosen);
-      splashOverlay.classList.add('hidden');
-      floatingSwitch.style.display = '';
-      // Allow scrolling
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Block scrolling while splash is open
-  document.body.style.overflow = 'hidden';
-
-  // ══════════════════════════════════════════════════════════════
   // MODE SWITCH
   // ══════════════════════════════════════════════════════════════
   const body = document.body;
@@ -1270,8 +1127,8 @@
     scrubContainer.appendChild(span);
   });
   const scrubSpans = scrubContainer.querySelectorAll('.fdp-scrub-char');
-  const SCRUB_START = 20;
-  const SCRUB_END = 120;
+  const SCRUB_START = 1;
+  const SCRUB_END = 60;
   const SCRUB_STEP = (SCRUB_END - SCRUB_START) / scrubSpans.length;
 
   function updateClientScrub() {
@@ -1287,7 +1144,7 @@
   // AGENCE: HERO WORD SWAP
   // ══════════════════════════════════════════════════════════════
   const swapEl = document.getElementById('hero-swap');
-  const SWAP_THRESHOLD = 60;
+  const SWAP_THRESHOLD = 1;
 
   function updateAgenceSwap() {
     if (!swapEl) return;
@@ -1302,35 +1159,41 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // ARROW ANIMATIONS (works for both modes)
+  // ARROW ANIMATIONS (CSS-based, works for both modes)
   // ══════════════════════════════════════════════════════════════
-  const TRUNK_LEN = 220;
-  const BRANCH_LEN = 30;
-  const Y_B1 = 60, Y_B2 = 140, Y_B3 = 220;
-
   function animateArrowSet(wrapper) {
-    if (!wrapper || wrapper.offsetParent === null) return; // skip if hidden
-    const trunk = wrapper.querySelector('.arrow-trunk');
-    const b1 = wrapper.querySelector('.arrow-b1');
-    const b2 = wrapper.querySelector('.arrow-b2');
-    const b3 = wrapper.querySelector('.arrow-b3');
+    if (!wrapper || wrapper.offsetParent === null) return;
+    const trunk = wrapper.querySelector('.audit-arrow-trunk');
+    const branches = wrapper.querySelectorAll('.audit-arrow-branch');
     const cards = wrapper.querySelectorAll('.outcome-card');
-    if (!trunk) return;
+    const grid = wrapper.querySelector('.outcomes-grid');
+    if (!trunk || !grid) return;
 
+    // Position branches to align with card centers
+    cards.forEach((card, i) => {
+      const branch = branches[i];
+      if (!branch) return;
+      const cardTop = card.offsetTop;
+      const cardMid = cardTop + card.offsetHeight / 2;
+      branch.style.top = cardMid + 'px';
+    });
+
+    // Scroll-based progress
     const rect = wrapper.getBoundingClientRect();
-    const cursorInWrapper = window.innerHeight * 0.20 - rect.top;
-    const progress = Math.max(0, Math.min(1, cursorInWrapper / (rect.height * 0.30)));
+    const triggerPoint = window.innerHeight * 0.75;
+    const progress = Math.max(0, Math.min(1, (triggerPoint - rect.top) / (rect.height * 0.6)));
+    const totalHeight = grid.offsetHeight;
 
-    trunk.style.strokeDashoffset = TRUNK_LEN * (1 - progress);
-    const headY = progress * TRUNK_LEN;
+    trunk.style.height = (progress * totalHeight) + 'px';
 
-    [Y_B1, Y_B2, Y_B3].forEach((yPos, i) => {
-      const branch = [b1, b2, b3][i];
-      const card = cards[i];
-      if (!branch || !card) return;
-      const prog = Math.max(0, Math.min(1, (headY - yPos) / 40));
-      branch.style.strokeDashoffset = BRANCH_LEN * (1 - prog);
-      card.classList.toggle('lit', prog >= 1);
+    const trunkHeight = progress * totalHeight;
+    cards.forEach((card, i) => {
+      const branch = branches[i];
+      if (!branch) return;
+      const branchY = parseFloat(branch.style.top) || 0;
+      const reached = trunkHeight >= branchY;
+      branch.classList.toggle('visible', reached);
+      card.classList.toggle('lit', reached);
     });
   }
 
