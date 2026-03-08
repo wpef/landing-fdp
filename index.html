@@ -77,24 +77,30 @@
   [data-mode="client"] .client-only { display: contents; }
   [data-mode="agence"] .agence-only { display: contents; }
 
-  /* ── SLIDER TOGGLE ────────────────────────────────────────────── */
+  /* ── FLOATING SLIDER TOGGLE ─────────────────────────────────── */
   .mode-switch {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--surface-2);
+    background: var(--surface);
     border: 1px solid var(--border-strong);
     border-radius: 100px;
     padding: 3px 4px;
-    position: relative;
     cursor: pointer;
     user-select: none;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    transition: background 0.5s, border-color 0.5s;
   }
   .mode-switch-option {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.04em;
-    padding: 4px 14px;
+    padding: 6px 16px;
     border-radius: 100px;
     color: var(--text-muted);
     transition: color 0.3s;
@@ -389,7 +395,8 @@
     .cta-inner { padding: 32px 24px; }
     .outcomes-wrapper { grid-template-columns: 40px 1fr; }
     .audit-arrow-svg { width: 40px; }
-    .mode-switch-option { font-size: 10px; padding: 4px 10px; }
+    .mode-switch { bottom: 16px; right: 16px; }
+    .mode-switch-option { font-size: 11px; padding: 5px 12px; }
   }
 </style>
 </head>
@@ -413,11 +420,6 @@
     </ul>
   </div>
   <div class="nav-right">
-    <div class="mode-switch" id="mode-switch">
-      <span class="mode-switch-option active" data-mode="client">Client</span>
-      <span class="mode-switch-option" data-mode="agence">Agence</span>
-      <div class="mode-switch-pill" id="mode-pill"></div>
-    </div>
     <span class="mode-content client-only">
       <a href="#plans" class="btn-nav btn-nav-ghost">Voir les formules</a>
     </span>
@@ -1030,6 +1032,15 @@
   </div>
   <div class="footer-right">© 2026</div>
 </footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FLOATING MODE SWITCH
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="mode-switch" id="mode-switch">
+  <span class="mode-switch-option active" data-mode="client">Client</span>
+  <span class="mode-switch-option" data-mode="agence">Agence</span>
+  <div class="mode-switch-pill" id="mode-pill"></div>
+</div>
 
 <script>
   // ══════════════════════════════════════════════════════════════
