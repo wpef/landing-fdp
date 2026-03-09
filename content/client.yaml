@@ -1,0 +1,208 @@
+# ─────────────────────────────────────────────
+# Textes mode CLIENT
+# ─────────────────────────────────────────────
+
+nav:
+  link_audit: Audit
+  link_plans: Formules
+  btn_secondary: Voir les formules
+  btn_primary: Prendre RDV
+
+hero:
+  eyebrow: "Freelance indépendant — Maintenance web"
+  intro: "Quand tu reçois le mail de l'agence qui te fait dire…"
+  desc: >
+    C'est exactement là qu'intervient Fils de Projet. Seul aux commandes,
+    direct, sans intermédiaire. Ton site géré sérieusement — WordPress,
+    Shopify, CMS no-code.
+  btn_primary: "Démarrer par un audit →"
+  btn_secondary: Voir les formules
+  meta:
+    - val: "500–900€"
+      label: Audit complet
+    - val: "5–7 j"
+      label: Délai de livraison
+    - val: "0"
+      label: Engagement requis
+    - val: "1"
+      label: Interlocuteur
+
+# ── Section Pain ──────────────────────────────
+pain:
+  label: Pourquoi Fils de Projet
+  title: "Ce que les agences font mal."
+  desc: "Tu paies pour un service. Tu obtiens de la bureaucratie."
+  items:
+    - icon: "⏳"
+      title: Les délais
+      desc: "3 semaines pour modifier un texte. Quand t'as un interlocuteur disponible."
+      quote: "\"C'est en cours de traitement.\""
+    - icon: "👻"
+      title: Les interlocuteurs fantômes
+      desc: "Le chef de projet change tous les 6 mois. Personne ne connaît ton site."
+      quote: "\"Je reprends le dossier, tu peux me re-expliquer ?\""
+    - icon: "💸"
+      title: "L'opacité"
+      desc: "Tu paies sans savoir ce que ça couvre. Les devis arrivent après les surprises."
+      quote: "\"Ce n'était pas inclus dans le forfait initial.\""
+    - icon: "🔇"
+      title: Le silence radio
+      desc: "Ton site plante un dimanche. Tu l'apprends le lundi en ouvrant tes mails."
+      quote: "\"On a été alerté, on traite ça en priorité.\""
+    - icon: "🗃️"
+      title: La stack surdimensionnée
+      desc: "Plugins inutiles, hébergement trop cher, abonnements qui tournent dans le vide."
+      quote: "\"On a mis en place une solution robuste et scalable.\""
+    - icon: "📋"
+      title: Le process lourd
+      desc: "Brief → validation → devis → go → livraison. Pour chaque modification mineure."
+      quote: "\"Il faut qu'on fasse un point en visio d'abord.\""
+
+# ── Section Audit ─────────────────────────────
+audit:
+  label: Première étape
+  title: "L'audit qui dit la vérité."
+  desc: >
+    Avant de toucher quoi que ce soit, je te dis la vérité sur ton site.
+    Ce qui coûte trop cher. Ce qui fout tout en l'air. Ce qu'on fait ensuite.
+  card:
+    title: "Périmètre de l'audit"
+    tag_accent: Inclus
+    tag_grey: "5–7 jours ouvrés"
+    items:
+      - title: Technique
+        val: "Core Web Vitals, sécurité, mises à jour manquantes, bugs visuels et fonctionnels"
+      - title: "SEO & Tracking"
+        val: "Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké"
+      - title: Analyse des coûts
+        val: "Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper"
+  outcomes:
+    - icon: "⚡"
+      title: One-shot de correction
+      desc: "Site globalement sain. Quelques problèmes ciblés à régler, puis terminé."
+    - icon: "🔄"
+      title: Suivi long terme
+      desc: "Le site a de la valeur et nécessite un accompagnement régulier. On met en place un plan."
+    - icon: "🚀"
+      title: Refonte ou migration
+      desc: "La stack actuelle est inadaptée ou trop coûteuse. On évalue ensemble la meilleure option."
+  price:
+    label: Tarif audit
+    tag: Sans engagement
+    tiers:
+      - amount: "500 €"
+        label: "Site vitrine · CMS standard"
+        detail: "Moins de 20 pages · stack simple"
+      - amount: "900 €"
+        label: "E-commerce · stack complexe"
+        detail: "WooCommerce, Shopify · plugins nombreux"
+    footer: "Livraison 5–7 jours ouvrés · HT"
+
+# ── Section Plans ─────────────────────────────
+plans:
+  label: Formules
+  title: "Pas d'abonnement piège."
+  desc: "Pas de préavis contractuel. Tu restes parce que c'est bon, pas parce que t'as signé quelque chose."
+  items:
+    - name: Essentiel
+      price: "290€"
+      period: "/ mois HT"
+      features:
+        - "Mises à jour CMS, thème, plugins"
+        - "Monitoring uptime + alertes"
+        - "1h d'intervention mensuelle"
+        - "Réponse sous 48h ouvrées"
+      ideal: "Site vitrine stable — peu d'évolutions attendues."
+      cta: Démarrer
+    - name: Actif
+      tag: Recommandé
+      price: "590€"
+      period: "/ mois HT"
+      features:
+        - "Tout l'Essentiel inclus"
+        - "4h de dev / modifications / mois"
+        - "Rapport mensuel + recommandations"
+        - "Réponse sous 24h ouvrées"
+      ideal: "Site actif — des besoins réguliers de contenu ou d'évolutions légères."
+      cta: Démarrer
+    - name: Partenaire
+      price: "990€"
+      period: "/ mois HT"
+      features:
+        - "Tout l'Actif inclus"
+        - "8h de dev / mois"
+        - "Canal Slack dédié"
+        - "Réponse sous 4h · SLA critique 24h"
+        - "Roadmap proactive mensuelle"
+      ideal: "E-commerçants, startups — le site est un levier business central."
+      cta: Démarrer
+  conditions:
+    title: Conditions
+    items:
+      - "Aucun engagement de durée — tu pars quand tu veux, sans préavis."
+      - "Les heures non consommées sont reportées au mois suivant."
+      - "Les dépassements sont rattrapés — déduits de ton crédit disponible, sinon facturés au TJM (350–450 € / j)."
+
+# ── Terminal ──────────────────────────────────
+terminal:
+  filename: fdp-audit.sh
+  lines:
+    - type: cmd
+      prompt: "$ "
+      text: "./audit --url votre-site.fr"
+    - type: comment
+      text: "# Analyse en cours — je regarde tout. Vraiment."
+    - type: out
+      text: "✓  Core Web Vitals analysés"
+    - type: warn
+      text: "⚠  4 plugins inactifs détectés  →  économie possible : 47€/mois"
+    - type: warn
+      text: "⚠  GTM mal configuré  →  3 événements non trackés"
+    - type: warn
+      text: "⚠  SSL expire dans 12 jours"
+    - type: out
+      text: "✓  Hébergement surdimensionné  →  migration recommandée"
+    - type: blank
+    - type: cmd
+      prompt: "$ "
+      text: "./rapport --output pdf --ton honnête"
+    - type: success
+      text: "→  Livraison estimée : 5 jours ouvrés"
+    - type: success
+      text: "→  Économies identifiées : 113€/mois"
+    - type: success
+      text: "→  Recommandation : Formule Actif + migration hébergeur"
+    - type: blank
+    - type: comment
+      text: "# Évolutions identifiées"
+    - type: cmd
+      prompt: "$ "
+      text: "./todo --type evolutions"
+    - type: out
+      text: "[ ]  flux Google Shopping  →  finaliser mapping produits"
+    - type: out
+      text: "[ ]  checkout  →  bandeau délais de livraison"
+    - type: out
+      text: "[ ]  facturation studio  →  automatiser envoi mensuel"
+    - type: warn
+      text: "[ ]  RDV Agence — brief refonte  →  17h00 à confirmer"
+    - type: comment
+      text: "# 4 tâches · ~3h estimées · inclus dans formule Partenaire"
+
+# ── CTA ───────────────────────────────────────
+cta:
+  eyebrow: "On commence par un audit."
+  title: "30 min de call.<br>Je regarde. Je te dis ce que j'en pense. Vraiment."
+  sub: "Pas de devis bullshit. Pas d'engagement."
+  sub2: "Seul aux commandes — sans intermédiaire, sans process lourd."
+  btn: "Réserver un créneau →"
+  btn_url: "https://calendly.com/fdp"
+  hint: "Réponse sous 24h · WordPress · Shopify · WooCommerce · CMS no-code"
+
+# ── Footer ────────────────────────────────────
+footer:
+  tags:
+    - WordPress
+    - Shopify
+    - WooCommerce
+    - CMS no-code

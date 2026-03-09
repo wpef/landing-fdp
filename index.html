@@ -441,30 +441,26 @@
      ═══════════════════════════════════════════════════════════════ -->
 <nav>
   <div class="nav-left">
-    <div class="nav-logo">
-      <span class="logo-line"><span class="initial">F</span>ils</span>
-      <span class="logo-line"><span class="initial">d</span>e</span>
-      <span class="logo-line"><span class="initial">P</span>rojet</span>
-    </div>
+    <div class="nav-logo" data-i18n-logo="common.nav.logo"></div>
     <ul class="nav-links">
-      <li class="mode-content client-only"><a href="#audit">Audit</a></li>
-      <li class="mode-content client-only"><a href="#plans">Formules</a></li>
-      <li class="mode-content agence-only"><a href="#audit">Matching</a></li>
-      <li class="mode-content agence-only"><a href="#plans">Tarifs</a></li>
+      <li class="mode-content client-only"><a href="#audit" data-i18n="client.nav.link_audit"></a></li>
+      <li class="mode-content client-only"><a href="#plans" data-i18n="client.nav.link_plans"></a></li>
+      <li class="mode-content agence-only"><a href="#audit" data-i18n="agence.nav.link_audit"></a></li>
+      <li class="mode-content agence-only"><a href="#plans" data-i18n="agence.nav.link_plans"></a></li>
     </ul>
   </div>
   <div class="nav-right">
     <span class="mode-content client-only">
-      <a href="#plans" class="btn-nav btn-nav-ghost">Voir les formules</a>
+      <a href="#plans" class="btn-nav btn-nav-ghost" data-i18n="client.nav.btn_secondary"></a>
     </span>
     <span class="mode-content agence-only">
-      <a href="#plans" class="btn-nav btn-nav-ghost">Voir les tarifs</a>
+      <a href="#plans" class="btn-nav btn-nav-ghost" data-i18n="agence.nav.btn_secondary"></a>
     </span>
     <span class="mode-content client-only">
-      <a href="#contact" class="btn-nav btn-nav-primary">Prendre RDV</a>
+      <a href="#contact" class="btn-nav btn-nav-primary" data-i18n="client.nav.btn_primary"></a>
     </span>
     <span class="mode-content agence-only">
-      <a href="#contact" class="btn-nav btn-nav-primary">Caler un call</a>
+      <a href="#contact" class="btn-nav btn-nav-primary" data-i18n="agence.nav.btn_primary"></a>
     </span>
   </div>
 </nav>
@@ -475,76 +471,38 @@
 <div class="hero">
   <!-- Client hero -->
   <div class="mode-content client-only">
-    <div class="hero-eyebrow">Freelance indépendant — Maintenance web</div>
+    <div class="hero-eyebrow" data-i18n="client.hero.eyebrow"></div>
     <h1 class="hero-title">
-      <span class="hero-intro">Quand tu reçois le mail de l'agence qui te fait dire…</span>
-      « <span class="fdp-static">Fils de</span><span id="fdp-scrub"></span> »
+      <span class="hero-intro" data-i18n="client.hero.intro"></span>
+      « <span class="fdp-static" data-i18n="common.hero.fdp_static"></span><span id="fdp-scrub"></span> »
     </h1>
-    <div class="hero-reveal-hint" id="reveal-hint-client">scroll pour révéler</div>
-    <p class="hero-desc">
-      C'est exactement là qu'intervient Fils de Projet. Seul aux commandes, direct, sans intermédiaire. Ton site géré sérieusement — WordPress, Shopify, CMS no-code.
-    </p>
+    <div class="hero-reveal-hint" id="reveal-hint-client" data-i18n="common.hero.reveal_hint"></div>
+    <p class="hero-desc" data-i18n="client.hero.desc"></p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Démarrer par un audit →</a>
-      <a href="#plans" class="btn-secondary">Voir les formules</a>
+      <a href="#contact" class="btn-primary" data-i18n="client.hero.btn_primary"></a>
+      <a href="#plans" class="btn-secondary" data-i18n="client.hero.btn_secondary"></a>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">500–900€</span>
-        <span class="hero-meta-label">Audit complet</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">5–7 j</span>
-        <span class="hero-meta-label">Délai de livraison</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">0</span>
-        <span class="hero-meta-label">Engagement requis</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">1</span>
-        <span class="hero-meta-label">Interlocuteur</span>
-      </div>
-    </div>
+    <div class="hero-meta" data-tpl="meta" data-src="client.hero.meta"></div>
   </div>
 
   <!-- Agence hero -->
   <div class="mode-content agence-only">
-    <div class="hero-eyebrow">Renfort technique — Partenaire agence</div>
+    <div class="hero-eyebrow" data-i18n="agence.hero.eyebrow"></div>
     <h1 class="hero-title">
-      <span class="hero-intro">Quand vos équipes ne suffisent plus, il vous faut un</span>
+      <span class="hero-intro" data-i18n="agence.hero.intro"></span>
       <span class="hero-word-swap" id="hero-swap">
-        <span class="hero-word-chef">Chef</span>
-        <span class="hero-word-fils">Fils</span>
+        <span class="hero-word-chef" data-i18n="agence.hero.word_chef"></span>
+        <span class="hero-word-fils" data-i18n="agence.hero.word_fils"></span>
       </span>
-      <span class="fdp-static"> de Projet.</span>
+      <span class="fdp-static" data-i18n="agence.hero.fdp_static"></span>
     </h1>
-    <div class="hero-reveal-hint" id="reveal-hint-agence">scroll pour révéler</div>
-    <p class="hero-desc">
-      Senior 12 ans. Shopify, WordPress, WooCommerce, PrestaShop, CMS headless. Je me glisse dans votre organisation — en white label, co-brandé, ou comme relais terrain chez votre client.
-    </p>
+    <div class="hero-reveal-hint" id="reveal-hint-agence" data-i18n="common.hero.reveal_hint"></div>
+    <p class="hero-desc" data-i18n="agence.hero.desc"></p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Caler un call de matching →</a>
-      <a href="#plans" class="btn-secondary">Voir les tarifs</a>
+      <a href="#contact" class="btn-primary" data-i18n="agence.hero.btn_primary"></a>
+      <a href="#plans" class="btn-secondary" data-i18n="agence.hero.btn_secondary"></a>
     </div>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">12 ans</span>
-        <span class="hero-meta-label">d'expérience terrain</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">30 min</span>
-        <span class="hero-meta-label">Call de matching</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">3</span>
-        <span class="hero-meta-label">Modes d'intégration</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-val">1</span>
-        <span class="hero-meta-label">Interlocuteur senior</span>
-      </div>
-    </div>
+    <div class="hero-meta" data-tpl="meta" data-src="agence.hero.meta"></div>
   </div>
 </div>
 
@@ -553,91 +511,17 @@
      ═══════════════════════════════════════════════════════════════ -->
 <section class="section" id="why">
   <div class="mode-content client-only">
-    <div class="section-label">Pourquoi Fils de Projet</div>
-    <h2 class="section-title">Ce que les agences font mal.</h2>
-    <p class="section-desc">Tu paies pour un service. Tu obtiens de la bureaucratie.</p>
-    <div class="pain-grid">
-      <div class="pain-item">
-        <div class="pain-icon">⏳</div>
-        <div class="pain-title">Les délais</div>
-        <div class="pain-desc">3 semaines pour modifier un texte. Quand t'as un interlocuteur disponible.</div>
-        <div class="pain-quote">"C'est en cours de traitement."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">👻</div>
-        <div class="pain-title">Les interlocuteurs fantômes</div>
-        <div class="pain-desc">Le chef de projet change tous les 6 mois. Personne ne connaît ton site.</div>
-        <div class="pain-quote">"Je reprends le dossier, tu peux me re-expliquer ?"</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">💸</div>
-        <div class="pain-title">L'opacité</div>
-        <div class="pain-desc">Tu paies sans savoir ce que ça couvre. Les devis arrivent après les surprises.</div>
-        <div class="pain-quote">"Ce n'était pas inclus dans le forfait initial."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🔇</div>
-        <div class="pain-title">Le silence radio</div>
-        <div class="pain-desc">Ton site plante un dimanche. Tu l'apprends le lundi en ouvrant tes mails.</div>
-        <div class="pain-quote">"On a été alerté, on traite ça en priorité."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🗃️</div>
-        <div class="pain-title">La stack surdimensionnée</div>
-        <div class="pain-desc">Plugins inutiles, hébergement trop cher, abonnements qui tournent dans le vide.</div>
-        <div class="pain-quote">"On a mis en place une solution robuste et scalable."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">📋</div>
-        <div class="pain-title">Le process lourd</div>
-        <div class="pain-desc">Brief → validation → devis → go → livraison. Pour chaque modification mineure.</div>
-        <div class="pain-quote">"Il faut qu'on fasse un point en visio d'abord."</div>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="client.pain.label"></div>
+    <h2 class="section-title" data-i18n="client.pain.title"></h2>
+    <p class="section-desc" data-i18n="client.pain.desc"></p>
+    <div class="pain-grid" data-tpl="pain" data-src="client.pain.items"></div>
   </div>
 
   <div class="mode-content agence-only">
-    <div class="section-label">Pourquoi Fils de Projet</div>
-    <h2 class="section-title">Ce que le recrutement ne règle pas.</h2>
-    <p class="section-desc">Un CDI prend 3 mois. Une agence sous-traitante prend du budget. Un freelance junior prend du risque.</p>
-    <div class="pain-grid">
-      <div class="pain-item">
-        <div class="pain-icon">⏳</div>
-        <div class="pain-title">Le pic de charge imprévu</div>
-        <div class="pain-desc">Trois projets Shopify en parallèle, un départ inattendu, et un client qui attend ses specs.</div>
-        <div class="pain-quote">"On est en sous-capacité ce trimestre."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🧩</div>
-        <div class="pain-title">La compétence manquante</div>
-        <div class="pain-desc">Votre équipe maîtrise le front. La migration WooCommerce vers Shopify headless, c'est une autre histoire.</div>
-        <div class="pain-quote">"On n'a personne en interne sur ce stack."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🔗</div>
-        <div class="pain-title">Le client qui vous court-circuite</div>
-        <div class="pain-desc">Il prend des décisions techniques sans vous. Les specs changent. Le projet dérive.</div>
-        <div class="pain-quote">"Ils ont contacté un dev directement, on a appris après."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">📉</div>
-        <div class="pain-title">La dette technique héritée</div>
-        <div class="pain-desc">Vous reprenez un projet livré par une autre agence. Stack indocumentée, plugins en vrac, zero process.</div>
-        <div class="pain-quote">"On reprend un site dont on n'a aucun historique."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🏗️</div>
-        <div class="pain-title">L'offre technique à étoffer</div>
-        <div class="pain-desc">Vos clients demandent du Shopify Plus, du CMS headless, des automatisations. Votre core team n'est pas là-dessus.</div>
-        <div class="pain-quote">"On aimerait proposer ça mais on n'a pas la ressource."</div>
-      </div>
-      <div class="pain-item">
-        <div class="pain-icon">🎯</div>
-        <div class="pain-title">Le projet sans PO disponible</div>
-        <div class="pain-desc">Le dev attend les specs. Le client ne sait pas prioriser. Personne ne cadre les sprints.</div>
-        <div class="pain-quote">"On a besoin de quelqu'un pour tenir la roadmap."</div>
-      </div>
-    </div>
+    <div class="section-label" data-i18n="agence.pain.label"></div>
+    <h2 class="section-title" data-i18n="agence.pain.title"></h2>
+    <p class="section-desc" data-i18n="agence.pain.desc"></p>
+    <div class="pain-grid" data-tpl="pain" data-src="agence.pain.items"></div>
   </div>
 </section>
 
@@ -647,153 +531,56 @@
 <section class="section" id="audit">
   <!-- Client: Audit -->
   <div class="mode-content client-only">
-    <div class="section-label">Première étape</div>
-    <h2 class="section-title">L'audit qui dit la vérité.</h2>
-    <p class="section-desc">Avant de toucher quoi que ce soit, je te dis la vérité sur ton site. Ce qui coûte trop cher. Ce qui fout tout en l'air. Ce qu'on fait ensuite.</p>
+    <div class="section-label" data-i18n="client.audit.label"></div>
+    <h2 class="section-title" data-i18n="client.audit.title"></h2>
+    <p class="section-desc" data-i18n="client.audit.desc"></p>
 
     <div class="audit-card">
       <div class="audit-card-header">
         <div class="audit-card-title">
-          Périmètre de l'audit
-          <span class="tag tag-accent">Inclus</span>
+          <span data-i18n="client.audit.card.title"></span>
+          <span class="tag tag-accent" data-i18n="client.audit.card.tag_accent"></span>
         </div>
-        <span class="tag tag-grey">5–7 jours ouvrés</span>
+        <span class="tag tag-grey" data-i18n="client.audit.card.tag_grey"></span>
       </div>
-      <div class="audit-card-body">
-        <div>
-          <div class="audit-item-title">Technique</div>
-          <div class="audit-item-val">Core Web Vitals, sécurité, mises à jour manquantes, bugs visuels et fonctionnels</div>
-        </div>
-        <div>
-          <div class="audit-item-title">SEO & Tracking</div>
-          <div class="audit-item-val">Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké</div>
-        </div>
-        <div>
-          <div class="audit-item-title">Analyse des coûts</div>
-          <div class="audit-item-val">Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper</div>
-        </div>
-      </div>
+      <div class="audit-card-body" data-tpl="audit-items" data-src="client.audit.card.items"></div>
     </div>
 
     <div class="outcomes-wrapper" id="outcomes-wrapper-client">
       <div class="audit-arrow-col">
         <div class="audit-arrow-trunk"></div>
-        <div class="audit-arrow-branch" data-card="0"></div>
-        <div class="audit-arrow-branch" data-card="1"></div>
-        <div class="audit-arrow-branch" data-card="2"></div>
       </div>
-      <div class="outcomes-grid">
-        <div class="outcome-card oc-1">
-          <div class="outcome-icon">⚡</div>
-          <div class="outcome-title">One-shot de correction</div>
-          <div class="outcome-desc">Site globalement sain. Quelques problèmes ciblés à régler, puis terminé.</div>
-        </div>
-        <div class="outcome-card oc-2">
-          <div class="outcome-icon">🔄</div>
-          <div class="outcome-title">Suivi long terme</div>
-          <div class="outcome-desc">Le site a de la valeur et nécessite un accompagnement régulier. On met en place un plan.</div>
-        </div>
-        <div class="outcome-card oc-3">
-          <div class="outcome-icon">🚀</div>
-          <div class="outcome-title">Refonte ou migration</div>
-          <div class="outcome-desc">La stack actuelle est inadaptée ou trop coûteuse. On évalue ensemble la meilleure option.</div>
-        </div>
-      </div>
+      <div class="outcomes-grid" data-tpl="outcomes" data-src="client.audit.outcomes"></div>
     </div>
 
-    <div class="price-block">
-      <div class="price-block-header">
-        <span class="section-label" style="margin:0">Tarif audit</span>
-        <span class="tag tag-grey">Sans engagement</span>
-      </div>
-      <div class="price-block-body">
-        <div class="price-tier">
-          <div class="price-tier-amount">500 €</div>
-          <div class="price-tier-label">Site vitrine · CMS standard</div>
-          <div class="price-tier-detail">Moins de 20 pages · stack simple</div>
-        </div>
-        <div class="price-tier-sep">→</div>
-        <div class="price-tier">
-          <div class="price-tier-amount">900 €</div>
-          <div class="price-tier-label">E-commerce · stack complexe</div>
-          <div class="price-tier-detail">WooCommerce, Shopify · plugins nombreux</div>
-        </div>
-      </div>
-      <div class="price-block-footer">Livraison 5–7 jours ouvrés · HT</div>
-    </div>
+    <div class="price-block" data-tpl="price-client" data-src="client.audit.price"></div>
   </div>
 
   <!-- Agence: Matching -->
   <div class="mode-content agence-only">
-    <div class="section-label">Première étape</div>
-    <h2 class="section-title">Un call. On voit si ça matche.</h2>
-    <p class="section-desc">Pas de devis à l'aveugle. On prend 30 minutes pour qualifier le besoin, comprendre votre contexte, et voir concrètement comment je peux m'intégrer.</p>
+    <div class="section-label" data-i18n="agence.audit.label"></div>
+    <h2 class="section-title" data-i18n="agence.audit.title"></h2>
+    <p class="section-desc" data-i18n="agence.audit.desc"></p>
 
     <div class="audit-card">
       <div class="audit-card-header">
         <div class="audit-card-title">
-          Ce qu'on qualifie ensemble
-          <span class="tag tag-accent">30 min</span>
+          <span data-i18n="agence.audit.card.title"></span>
+          <span class="tag tag-accent" data-i18n="agence.audit.card.tag_accent"></span>
         </div>
-        <span class="tag tag-grey">Sans engagement</span>
+        <span class="tag tag-grey" data-i18n="agence.audit.card.tag_grey"></span>
       </div>
-      <div class="audit-card-body">
-        <div>
-          <div class="audit-item-title">Contexte projet</div>
-          <div class="audit-item-val">Stack technique, état du projet, équipe en place, délais</div>
-        </div>
-        <div>
-          <div class="audit-item-title">Besoins réels</div>
-          <div class="audit-item-val">Renfort ponctuel, montée en charge, compétence manquante, PO, conseil</div>
-        </div>
-        <div>
-          <div class="audit-item-title">Mode d'intégration</div>
-          <div class="audit-item-val">White label, co-brandé ou relais terrain — on choisit ensemble ce qui fait sens</div>
-        </div>
-      </div>
+      <div class="audit-card-body" data-tpl="audit-items" data-src="agence.audit.card.items"></div>
     </div>
 
     <div class="outcomes-wrapper" id="outcomes-wrapper-agence">
       <div class="audit-arrow-col">
         <div class="audit-arrow-trunk"></div>
-        <div class="audit-arrow-branch" data-card="0"></div>
-        <div class="audit-arrow-branch" data-card="1"></div>
-        <div class="audit-arrow-branch" data-card="2"></div>
       </div>
-      <div class="outcomes-grid">
-        <div class="outcome-card oc-1">
-          <div class="outcome-icon">🕶️</div>
-          <div class="outcome-title">Renfort — White label</div>
-          <div class="outcome-desc">J'intègre vos équipes sous votre marque. Vos clients ne savent pas que j'existe. Votre process, votre image.</div>
-        </div>
-        <div class="outcome-card oc-2">
-          <div class="outcome-icon">🛰️</div>
-          <div class="outcome-title">Satellite — Co-brandé</div>
-          <div class="outcome-desc">J'interviens chez votre client en mon nom, dans le cadre de votre mission. Vous gardez le contrôle, je prends la technique.</div>
-        </div>
-        <div class="outcome-card oc-3">
-          <div class="outcome-icon">📡</div>
-          <div class="outcome-title">Ambassadeur — Relais terrain</div>
-          <div class="outcome-desc">Je suis chez votre client, je fluidifie votre relation avec lui. Je fais avancer les sujets, je suis votre interface de confiance sur place.</div>
-        </div>
-      </div>
+      <div class="outcomes-grid" data-tpl="outcomes" data-src="agence.audit.outcomes"></div>
     </div>
 
-    <div class="price-block">
-      <div class="price-block-header">
-        <span class="section-label" style="margin:0">Call de matching</span>
-        <span class="tag tag-grey">Imputable sur la première mission</span>
-      </div>
-      <div class="price-block-single">
-        <div class="price-block-amount">80 €</div>
-        <div class="price-block-detail">
-          <strong>30 minutes · visio</strong><br>
-          Qualification du besoin, présentation des compétences, choix du mode d'intégration.<br>
-          Imputable sur la première facture de mission.
-        </div>
-      </div>
-      <div class="price-block-footer">HT · Sans engagement · Remboursé si on travaille ensemble</div>
-    </div>
+    <div class="price-block" data-tpl="price-agence" data-src="agence.audit.price"></div>
   </div>
 </section>
 
@@ -803,213 +590,29 @@
 <section class="section" id="plans">
   <!-- Client: Formules -->
   <div class="mode-content client-only">
-    <div class="section-label">Formules</div>
-    <h2 class="section-title">Pas d'abonnement piège.</h2>
-    <p class="section-desc">Pas de préavis contractuel. Tu restes parce que c'est bon, pas parce que t'as signé quelque chose.</p>
-
-    <div class="plans-grid">
-      <div class="plan-card">
-        <div class="plan-name">Essentiel</div>
-        <div class="plan-price">290€</div>
-        <div class="plan-period">/ mois HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Mises à jour CMS, thème, plugins</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Monitoring uptime + alertes</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> 1h d'intervention mensuelle</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 48h ouvrées</li>
-        </ul>
-        <div class="plan-ideal">Site vitrine stable — peu d'évolutions attendues.</div>
-        <a href="#contact" class="plan-cta plan-cta-default">Démarrer</a>
-      </div>
-      <div class="plan-card featured">
-        <div class="plan-name">Actif <span class="tag tag-accent">Recommandé</span></div>
-        <div class="plan-price">590€</div>
-        <div class="plan-period">/ mois HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tout l'Essentiel inclus</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> 4h de dev / modifications / mois</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rapport mensuel + recommandations</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 24h ouvrées</li>
-        </ul>
-        <div class="plan-ideal">Site actif — des besoins réguliers de contenu ou d'évolutions légères.</div>
-        <a href="#contact" class="plan-cta plan-cta-featured">Démarrer</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-name">Partenaire</div>
-        <div class="plan-price">990€</div>
-        <div class="plan-period">/ mois HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tout l'Actif inclus</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> 8h de dev / mois</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Canal Slack dédié</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Réponse sous 4h · SLA critique 24h</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Roadmap proactive mensuelle</li>
-        </ul>
-        <div class="plan-ideal">E-commerçants, startups — le site est un levier business central.</div>
-        <a href="#contact" class="plan-cta plan-cta-default">Démarrer</a>
-      </div>
-    </div>
-
-    <div class="conditions-block">
-      <div class="conditions-title">Conditions</div>
-      <ul class="conditions-list">
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Aucun engagement de durée — tu pars quand tu veux, sans préavis.</span>
-        </li>
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Les heures non consommées sont reportées au mois suivant.</span>
-        </li>
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Les dépassements sont rattrapés — déduits de ton crédit disponible, sinon facturés au TJM (350–450 € / j).</span>
-        </li>
-      </ul>
-    </div>
+    <div class="section-label" data-i18n="client.plans.label"></div>
+    <h2 class="section-title" data-i18n="client.plans.title"></h2>
+    <p class="section-desc" data-i18n="client.plans.desc"></p>
+    <div class="plans-grid" data-tpl="plans" data-src="client.plans.items"></div>
+    <div data-tpl="conditions" data-src="client.plans.conditions"></div>
   </div>
 
   <!-- Agence: Tarifs -->
   <div class="mode-content agence-only">
-    <div class="section-label">Tarifs</div>
-    <h2 class="section-title">Un TJM selon le rôle. Rien de plus.</h2>
-    <p class="section-desc">Pas de forfait opaque. Le tarif dépend du niveau d'engagement — exécution, pilotage ou conseil stratégique.</p>
-
-    <div class="plans-grid">
-      <div class="plan-card">
-        <div class="plan-name">Q/A</div>
-        <div class="plan-price">450€</div>
-        <div class="plan-period">/ jour HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Tests fonctionnels et techniques</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Recette de livrables</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et validation de déploiement</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rapports de non-conformité</li>
-        </ul>
-        <div class="plan-ideal">Renfort sur un déploiement ou une phase de recette critique.</div>
-        <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
-      </div>
-      <div class="plan-card featured">
-        <div class="plan-name">PO <span class="tag tag-accent">Fréquent</span></div>
-        <div class="plan-price">600€</div>
-        <div class="plan-period">/ jour HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Suivi et animation des sprints</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Pilotage des développeurs</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Rédaction et priorisation des tickets</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Q/A intégré</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Reporting client</li>
-        </ul>
-        <div class="plan-ideal">Pilotage opérationnel d'un projet ou d'une équipe technique.</div>
-        <a href="#contact" class="plan-cta plan-cta-featured">Caler un call</a>
-      </div>
-      <div class="plan-card">
-        <div class="plan-name">Conseil</div>
-        <div class="plan-price">750€</div>
-        <div class="plan-period">/ jour HT</div>
-        <div class="plan-divider"></div>
-        <ul class="plan-features">
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Cadrage et gestion de roadmap</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Arbitrages budget / périmètre</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> PO inclus</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Recommandations stack technique</li>
-          <li class="plan-feature"><span class="plan-feature-check">✓</span> Interface stratégique avec le client final</li>
-        </ul>
-        <div class="plan-ideal">Engagement stratégique sur un projet structurant ou un compte clé.</div>
-        <a href="#contact" class="plan-cta plan-cta-default">Caler un call</a>
-      </div>
-    </div>
-
-    <div class="conditions-block">
-      <div class="conditions-title">Conditions</div>
-      <ul class="conditions-list">
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Facturation au réel — à la journée ou demi-journée selon le contexte.</span>
-        </li>
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Disponibilité confirmée à l'issue du call de matching — pas de réservation à l'aveugle.</span>
-        </li>
-        <li class="conditions-item">
-          <span class="conditions-dot"></span>
-          <span>Engagement minimum : aucun. Missions courtes (1–2 j) ou rétainer mensuel, les deux sont possibles.</span>
-        </li>
-      </ul>
-    </div>
+    <div class="section-label" data-i18n="agence.plans.label"></div>
+    <h2 class="section-title" data-i18n="agence.plans.title"></h2>
+    <p class="section-desc" data-i18n="agence.plans.desc"></p>
+    <div class="plans-grid" data-tpl="plans" data-src="agence.plans.items"></div>
+    <div data-tpl="conditions" data-src="agence.plans.conditions"></div>
   </div>
 
   <!-- Terminal — shared structure, different content -->
   <div class="mode-content client-only">
-    <div class="terminal">
-      <div class="terminal-header">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-        <span class="terminal-filename">fdp-audit.sh</span>
-      </div>
-      <div class="terminal-body">
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./audit --url votre-site.fr</span></span>
-        <span class="t-line t-comment"># Analyse en cours — je regarde tout. Vraiment.</span>
-        <span class="t-line t-out">✓  Core Web Vitals analysés</span>
-        <span class="t-line t-warn">⚠  4 plugins inactifs détectés  →  économie possible : 47€/mois</span>
-        <span class="t-line t-warn">⚠  GTM mal configuré  →  3 événements non trackés</span>
-        <span class="t-line t-warn">⚠  SSL expire dans 12 jours</span>
-        <span class="t-line t-out">✓  Hébergement surdimensionné  →  migration recommandée</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./rapport --output pdf --ton honnête</span></span>
-        <span class="t-line t-success">→  Livraison estimée : 5 jours ouvrés</span>
-        <span class="t-line t-success">→  Économies identifiées : 113€/mois</span>
-        <span class="t-line t-success">→  Recommandation : Formule Actif + migration hébergeur</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line t-comment"># Évolutions identifiées</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./todo --type evolutions</span></span>
-        <span class="t-line t-out">[ ]  flux Google Shopping  →  finaliser mapping produits</span>
-        <span class="t-line t-out">[ ]  checkout  →  bandeau délais de livraison</span>
-        <span class="t-line t-out">[ ]  facturation studio  →  automatiser envoi mensuel</span>
-        <span class="t-line t-warn">[ ]  RDV Agence — brief refonte  →  17h00 à confirmer</span>
-        <span class="t-line t-comment"># 4 tâches · ~3h estimées · inclus dans formule Partenaire</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>
-      </div>
-    </div>
+    <div class="terminal" data-tpl="terminal" data-src="client.terminal"></div>
   </div>
 
   <div class="mode-content agence-only">
-    <div class="terminal">
-      <div class="terminal-header">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-        <span class="terminal-filename">fdp-stack.sh</span>
-      </div>
-      <div class="terminal-body">
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./profil --export competences</span></span>
-        <span class="t-line t-comment"># Stack technique — Senior 12 ans</span>
-        <span class="t-line t-success">✓  E-commerce       →  Shopify, Shopify Plus, WooCommerce, PrestaShop</span>
-        <span class="t-line t-success">✓  CMS headless      →  Storyblok, Contentful, Strapi</span>
-        <span class="t-line t-success">✓  No-code / métier  →  Airtable, Softr, Notion</span>
-        <span class="t-line t-success">✓  Automatisation    →  n8n, Make</span>
-        <span class="t-line t-success">✓  CMS classiques    →  WordPress, ACF, Elementor</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./modes --intégration agence</span></span>
-        <span class="t-line t-out">[ renfort ]     White label — sous votre marque, dans vos process</span>
-        <span class="t-line t-out">[ satellite ]   Co-brandé — chez votre client, dans votre mission</span>
-        <span class="t-line t-out">[ ambassadeur ] Relais terrain — fluidifie agence ↔ client</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-cmd">./matching --disponibilite</span></span>
-        <span class="t-line t-success">→  Call 30 min · 80 € · imputable sur mission</span>
-        <span class="t-line t-success">→  Réponse sous 24h ouvrées</span>
-        <span class="t-line t-success">→  Basé Marseille · remote OK · déplacement possible</span>
-        <span class="t-line">&nbsp;</span>
-        <span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>
-      </div>
-    </div>
+    <div class="terminal" data-tpl="terminal" data-src="agence.terminal"></div>
   </div>
 </section>
 
@@ -1019,24 +622,20 @@
 <div class="cta-section" id="contact">
   <div class="cta-inner">
     <div class="mode-content client-only">
-      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;">On commence par un audit.</div>
-      <h2 class="cta-title">30 min de call.<br>Je regarde. Je te dis ce que j'en pense. Vraiment.</h2>
-      <p class="cta-sub">Pas de devis bullshit. Pas d'engagement.</p>
-      <p class="cta-sub2">Seul aux commandes — sans intermédiaire, sans process lourd.</p>
-      <a href="https://calendly.com/fdp" class="btn-primary" style="font-size: 15px; padding: 12px 28px;">
-        Réserver un créneau →
-      </a>
-      <p class="cta-hint">Réponse sous 24h · WordPress · Shopify · WooCommerce · CMS no-code</p>
+      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;" data-i18n="client.cta.eyebrow"></div>
+      <h2 class="cta-title" data-i18n-html="client.cta.title"></h2>
+      <p class="cta-sub" data-i18n="client.cta.sub"></p>
+      <p class="cta-sub2" data-i18n="client.cta.sub2"></p>
+      <a class="btn-primary" style="font-size: 15px; padding: 12px 28px;" data-i18n="client.cta.btn" data-i18n-href="client.cta.btn_url"></a>
+      <p class="cta-hint" data-i18n="client.cta.hint"></p>
     </div>
     <div class="mode-content agence-only">
-      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;">On commence par un call.</div>
-      <h2 class="cta-title">30 min pour voir si ça matche.<br>Pas de pitch. Que du concret.</h2>
-      <p class="cta-sub">Vous présentez le contexte. Je vous dis ce que je peux faire et comment.</p>
-      <p class="cta-sub2">Senior autonome — aucune supervision nécessaire, aucun onboarding à rallonge.</p>
-      <a href="https://calendly.com/fdp" class="btn-primary" style="font-size: 15px; padding: 12px 28px;">
-        Réserver un créneau →
-      </a>
-      <p class="cta-hint">80 € · imputable · Shopify · WordPress · CMS headless · Automatisation</p>
+      <div class="hero-eyebrow" style="margin-bottom: 24px; display: inline-flex;" data-i18n="agence.cta.eyebrow"></div>
+      <h2 class="cta-title" data-i18n-html="agence.cta.title"></h2>
+      <p class="cta-sub" data-i18n="agence.cta.sub"></p>
+      <p class="cta-sub2" data-i18n="agence.cta.sub2"></p>
+      <a class="btn-primary" style="font-size: 15px; padding: 12px 28px;" data-i18n="agence.cta.btn" data-i18n-href="agence.cta.btn_url"></a>
+      <p class="cta-hint" data-i18n="agence.cta.hint"></p>
     </div>
   </div>
 </div>
@@ -1045,38 +644,254 @@
      FOOTER
      ═══════════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo">
-    <span class="logo-line"><span class="initial">F</span>ils</span>
-    <span class="logo-line"><span class="initial">d</span>e</span>
-    <span class="logo-line"><span class="initial">P</span>rojet</span>
-  </div>
+  <div class="footer-logo" data-i18n-logo="common.footer.logo"></div>
   <div class="footer-links">
-    <div class="mode-content client-only">
-      <span>WordPress</span>
-      <span>Shopify</span>
-      <span>WooCommerce</span>
-      <span>CMS no-code</span>
-    </div>
-    <div class="mode-content agence-only">
-      <span>Shopify</span>
-      <span>CMS headless</span>
-      <span>No-code</span>
-      <span>Automatisation</span>
-    </div>
+    <div class="mode-content client-only" data-tpl="footer-tags" data-src="client.footer.tags"></div>
+    <div class="mode-content agence-only" data-tpl="footer-tags" data-src="agence.footer.tags"></div>
   </div>
-  <div class="footer-right">© 2026</div>
+  <div class="footer-right" data-i18n="common.footer.copyright"></div>
 </footer>
 
 <!-- ═══════════════════════════════════════════════════════════════
      FLOATING MODE SWITCH
      ═══════════════════════════════════════════════════════════════ -->
 <div class="mode-switch" id="mode-switch">
-  <span class="mode-switch-option active" data-mode="client">Client</span>
-  <span class="mode-switch-option" data-mode="agence">Agence</span>
+  <span class="mode-switch-option active" data-mode="client" data-i18n="common.mode_switch.client"></span>
+  <span class="mode-switch-option" data-mode="agence" data-i18n="common.mode_switch.agence"></span>
   <div class="mode-switch-pill" id="mode-pill"></div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     YAML PARSER (js-yaml 4.x — ~3KB gzipped)
+     ═══════════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
 <script>
+  // ══════════════════════════════════════════════════════════════
+  // CONTENT LOADER — charge les YAML et injecte les textes
+  // ══════════════════════════════════════════════════════════════
+  const CONTENT = {};
+
+  async function loadYAML(name) {
+    const res = await fetch('content/' + name + '.yaml');
+    const text = await res.text();
+    CONTENT[name] = jsyaml.load(text);
+  }
+
+  function resolve(path) {
+    const parts = path.split('.');
+    const file = parts.shift();
+    let val = CONTENT[file];
+    for (const p of parts) {
+      if (val == null) return undefined;
+      val = val[p];
+    }
+    return val;
+  }
+
+  // ── Template renderers ────────────────────────────────────────
+  const TPL = {
+    meta(container, items) {
+      container.innerHTML = items.map(m =>
+        '<div class="hero-meta-item">' +
+          '<span class="hero-meta-val">' + esc(m.val) + '</span>' +
+          '<span class="hero-meta-label">' + esc(m.label) + '</span>' +
+        '</div>'
+      ).join('');
+    },
+
+    pain(container, items) {
+      container.innerHTML = items.map(p =>
+        '<div class="pain-item">' +
+          '<div class="pain-icon">' + esc(p.icon) + '</div>' +
+          '<div class="pain-title">' + esc(p.title) + '</div>' +
+          '<div class="pain-desc">' + esc(p.desc) + '</div>' +
+          '<div class="pain-quote">' + esc(p.quote) + '</div>' +
+        '</div>'
+      ).join('');
+    },
+
+    'audit-items'(container, items) {
+      container.innerHTML = items.map(a =>
+        '<div>' +
+          '<div class="audit-item-title">' + esc(a.title) + '</div>' +
+          '<div class="audit-item-val">' + esc(a.val) + '</div>' +
+        '</div>'
+      ).join('');
+    },
+
+    outcomes(container, items) {
+      // Also regenerate arrow branches in the sibling arrow col
+      const arrowCol = container.closest('.outcomes-wrapper').querySelector('.audit-arrow-col');
+      // Keep trunk, remove old branches
+      arrowCol.querySelectorAll('.audit-arrow-branch').forEach(b => b.remove());
+      items.forEach((_, i) => {
+        const branch = document.createElement('div');
+        branch.className = 'audit-arrow-branch';
+        branch.dataset.card = i;
+        arrowCol.appendChild(branch);
+      });
+
+      container.innerHTML = items.map((o, i) =>
+        '<div class="outcome-card oc-' + (i + 1) + '">' +
+          '<div class="outcome-icon">' + esc(o.icon) + '</div>' +
+          '<div class="outcome-title">' + esc(o.title) + '</div>' +
+          '<div class="outcome-desc">' + esc(o.desc) + '</div>' +
+        '</div>'
+      ).join('');
+    },
+
+    'price-client'(container, data) {
+      container.innerHTML =
+        '<div class="price-block-header">' +
+          '<span class="section-label" style="margin:0">' + esc(data.label) + '</span>' +
+          '<span class="tag tag-grey">' + esc(data.tag) + '</span>' +
+        '</div>' +
+        '<div class="price-block-body">' +
+          data.tiers.map((t, i) =>
+            (i > 0 ? '<div class="price-tier-sep">→</div>' : '') +
+            '<div class="price-tier">' +
+              '<div class="price-tier-amount">' + esc(t.amount) + '</div>' +
+              '<div class="price-tier-label">' + esc(t.label) + '</div>' +
+              '<div class="price-tier-detail">' + esc(t.detail) + '</div>' +
+            '</div>'
+          ).join('') +
+        '</div>' +
+        '<div class="price-block-footer">' + esc(data.footer) + '</div>';
+    },
+
+    'price-agence'(container, data) {
+      container.innerHTML =
+        '<div class="price-block-header">' +
+          '<span class="section-label" style="margin:0">' + esc(data.label) + '</span>' +
+          '<span class="tag tag-grey">' + esc(data.tag) + '</span>' +
+        '</div>' +
+        '<div class="price-block-single">' +
+          '<div class="price-block-amount">' + esc(data.amount) + '</div>' +
+          '<div class="price-block-detail">' + (data.detail_html || esc(data.detail || '')) + '</div>' +
+        '</div>' +
+        '<div class="price-block-footer">' + esc(data.footer) + '</div>';
+    },
+
+    plans(container, items) {
+      container.innerHTML = items.map((p, i) => {
+        const featured = p.tag ? ' featured' : '';
+        const ctaCls = p.tag ? 'plan-cta-featured' : 'plan-cta-default';
+        const nameHtml = p.tag
+          ? esc(p.name) + ' <span class="tag tag-accent">' + esc(p.tag) + '</span>'
+          : esc(p.name);
+        return '<div class="plan-card' + featured + '">' +
+          '<div class="plan-name">' + nameHtml + '</div>' +
+          '<div class="plan-price">' + esc(p.price) + '</div>' +
+          '<div class="plan-period">' + esc(p.period) + '</div>' +
+          '<div class="plan-divider"></div>' +
+          '<ul class="plan-features">' +
+            p.features.map(f =>
+              '<li class="plan-feature"><span class="plan-feature-check">✓</span> ' + esc(f) + '</li>'
+            ).join('') +
+          '</ul>' +
+          '<div class="plan-ideal">' + esc(p.ideal) + '</div>' +
+          '<a href="#contact" class="plan-cta ' + ctaCls + '">' + esc(p.cta) + '</a>' +
+        '</div>';
+      }).join('');
+    },
+
+    conditions(container, data) {
+      container.innerHTML =
+        '<div class="conditions-block">' +
+          '<div class="conditions-title">' + esc(data.title) + '</div>' +
+          '<ul class="conditions-list">' +
+            data.items.map(c =>
+              '<li class="conditions-item">' +
+                '<span class="conditions-dot"></span>' +
+                '<span>' + esc(c) + '</span>' +
+              '</li>'
+            ).join('') +
+          '</ul>' +
+        '</div>';
+    },
+
+    terminal(container, data) {
+      const linesHtml = data.lines.map(l => {
+        if (l.type === 'blank') return '<span class="t-line">&nbsp;</span>';
+        if (l.type === 'cmd') return '<span class="t-line"><span class="t-prompt">' + esc(l.prompt) + '</span><span class="t-cmd">' + esc(l.text) + '</span></span>';
+        const cls = { comment: 't-comment', out: 't-out', success: 't-success', warn: 't-warn' }[l.type] || '';
+        return '<span class="t-line ' + cls + '">' + esc(l.text) + '</span>';
+      }).join('');
+
+      container.innerHTML =
+        '<div class="terminal-header">' +
+          '<div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>' +
+          '<span class="terminal-filename">' + esc(data.filename) + '</span>' +
+        '</div>' +
+        '<div class="terminal-body">' +
+          linesHtml +
+          '<span class="t-line"><span class="t-prompt">$ </span><span class="t-blink"></span></span>' +
+        '</div>';
+    },
+
+    'footer-tags'(container, items) {
+      container.innerHTML = items.map(t => '<span>' + esc(t) + '</span>').join('');
+    }
+  };
+
+  function esc(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function renderLogo(el, data) {
+    el.innerHTML =
+      '<span class="logo-line"><span class="initial">' + esc(data.line1_initial) + '</span>' + esc(data.line1) + '</span>' +
+      '<span class="logo-line"><span class="initial">' + esc(data.line2_initial) + '</span>' + esc(data.line2) + '</span>' +
+      '<span class="logo-line"><span class="initial">' + esc(data.line3_initial) + '</span>' + esc(data.line3) + '</span>';
+  }
+
+  function applyContent() {
+    // Simple text bindings
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const val = resolve(el.dataset.i18n);
+      if (val != null) el.textContent = val;
+    });
+
+    // HTML bindings (for titles with <br>)
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const val = resolve(el.dataset.i18nHtml);
+      if (val != null) el.innerHTML = val;
+    });
+
+    // Href bindings
+    document.querySelectorAll('[data-i18n-href]').forEach(el => {
+      const val = resolve(el.dataset.i18nHref);
+      if (val != null) el.href = val;
+    });
+
+    // Logo bindings
+    document.querySelectorAll('[data-i18n-logo]').forEach(el => {
+      const data = resolve(el.dataset.i18nLogo);
+      if (data) renderLogo(el, data);
+    });
+
+    // Template bindings
+    document.querySelectorAll('[data-tpl]').forEach(el => {
+      const tplName = el.dataset.tpl;
+      const data = resolve(el.dataset.src);
+      if (data && TPL[tplName]) TPL[tplName](el, data);
+    });
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // INIT — load all YAML files then render
+  // ══════════════════════════════════════════════════════════════
+  Promise.all([
+    loadYAML('common'),
+    loadYAML('client'),
+    loadYAML('agence')
+  ]).then(() => {
+    applyContent();
+    initAnimations();
+  });
+
   // ══════════════════════════════════════════════════════════════
   // MODE SWITCH
   // ══════════════════════════════════════════════════════════════
@@ -1089,7 +904,6 @@
     body.dataset.mode = mode;
     options.forEach(o => o.classList.toggle('active', o.dataset.mode === mode));
     positionPill();
-    // Re-init scroll-based animations for the active mode
     updateClientScrub();
     updateAgenceSwap();
     updateArrows();
@@ -1106,35 +920,47 @@
     o.addEventListener('click', () => setMode(o.dataset.mode));
   });
 
-  // Init pill position
   requestAnimationFrame(positionPill);
   window.addEventListener('resize', positionPill);
 
   // ══════════════════════════════════════════════════════════════
-  // CLIENT: FDP SCRUB (scroll-reveal dots)
+  // ANIMATIONS (initialized after content is loaded)
   // ══════════════════════════════════════════════════════════════
-  const scrubContainer = document.getElementById('fdp-scrub');
-  const parts = [
-    { char: '.', cls: 'ellipsis' },
-    { char: '.', cls: 'ellipsis' },
-    { char: '.', cls: 'ellipsis' },
-    { char: ' Projet.', cls: 'projet-word' },
-  ];
-  parts.forEach(({ char, cls }) => {
-    const span = document.createElement('span');
-    span.className = 'fdp-scrub-char' + (cls ? ' ' + cls : '');
-    span.textContent = char;
-    scrubContainer.appendChild(span);
-  });
-  const scrubSpans = scrubContainer.querySelectorAll('.fdp-scrub-char');
+  let scrubSpans = [];
   const SCRUB_START = 1;
   const SCRUB_END = 60;
-  const SCRUB_STEP = (SCRUB_END - SCRUB_START) / scrubSpans.length;
+
+  function initAnimations() {
+    // CLIENT: FDP SCRUB (scroll-reveal dots)
+    const scrubContainer = document.getElementById('fdp-scrub');
+    if (scrubContainer) {
+      const scrubText = resolve('common.hero.scrub_reveal') || ' Projet.';
+      const parts = [
+        { char: '.', cls: 'ellipsis' },
+        { char: '.', cls: 'ellipsis' },
+        { char: '.', cls: 'ellipsis' },
+        { char: scrubText, cls: 'projet-word' },
+      ];
+      parts.forEach(({ char, cls }) => {
+        const span = document.createElement('span');
+        span.className = 'fdp-scrub-char' + (cls ? ' ' + cls : '');
+        span.textContent = char;
+        scrubContainer.appendChild(span);
+      });
+      scrubSpans = scrubContainer.querySelectorAll('.fdp-scrub-char');
+    }
+
+    // Trigger initial scroll state
+    onScroll();
+    updateArrows();
+  }
 
   function updateClientScrub() {
+    if (!scrubSpans.length) return;
     const sy = window.scrollY;
+    const step = (SCRUB_END - SCRUB_START) / scrubSpans.length;
     scrubSpans.forEach((span, i) => {
-      span.style.opacity = sy >= SCRUB_START + i * SCRUB_STEP ? '1' : '0';
+      span.style.opacity = sy >= SCRUB_START + i * step ? '1' : '0';
     });
     const hint = document.getElementById('reveal-hint-client');
     if (hint) hint.classList.toggle('hidden', sy >= SCRUB_START);
@@ -1159,7 +985,7 @@
   }
 
   // ══════════════════════════════════════════════════════════════
-  // ARROW ANIMATIONS (CSS-based, works for both modes)
+  // ARROW ANIMATIONS
   // ══════════════════════════════════════════════════════════════
   function animateArrowSet(wrapper) {
     if (!wrapper || wrapper.offsetParent === null) return;
@@ -1169,7 +995,6 @@
     const grid = wrapper.querySelector('.outcomes-grid');
     if (!trunk || !grid) return;
 
-    // Position branches to align with card centers
     cards.forEach((card, i) => {
       const branch = branches[i];
       if (!branch) return;
@@ -1178,7 +1003,6 @@
       branch.style.top = cardMid + 'px';
     });
 
-    // Scroll-based progress
     const rect = wrapper.getBoundingClientRect();
     const triggerPoint = window.innerHeight * 0.75;
     const progress = Math.max(0, Math.min(1, (triggerPoint - rect.top) / (rect.height * 0.6)));
