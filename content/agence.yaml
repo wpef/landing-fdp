@@ -1,0 +1,204 @@
+# ─────────────────────────────────────────────
+# Textes mode AGENCE
+# ─────────────────────────────────────────────
+
+nav:
+  link_audit: Matching
+  link_plans: Tarifs
+  btn_secondary: Voir les tarifs
+  btn_primary: Caler un call
+
+hero:
+  eyebrow: "Renfort technique — Partenaire agence"
+  intro: "Quand vos équipes ne suffisent plus, il vous faut un"
+  word_chef: Chef
+  word_fils: Fils
+  fdp_static: " de Projet."
+  desc: >
+    Senior 12 ans. Shopify, WordPress, WooCommerce, PrestaShop, CMS headless.
+    Je me glisse dans votre organisation — en white label, co-brandé,
+    ou comme relais terrain chez votre client.
+  btn_primary: "Caler un call de matching →"
+  btn_secondary: Voir les tarifs
+  meta:
+    - val: "12 ans"
+      label: "d'expérience terrain"
+    - val: "30 min"
+      label: Call de matching
+    - val: "3"
+      label: "Modes d'intégration"
+    - val: "1"
+      label: Interlocuteur senior
+
+# ── Section Pain ──────────────────────────────
+pain:
+  label: Pourquoi Fils de Projet
+  title: "Ce que le recrutement ne règle pas."
+  desc: "Un CDI prend 3 mois. Une agence sous-traitante prend du budget. Un freelance junior prend du risque."
+  items:
+    - icon: "⏳"
+      title: Le pic de charge imprévu
+      desc: "Trois projets Shopify en parallèle, un départ inattendu, et un client qui attend ses specs."
+      quote: "\"On est en sous-capacité ce trimestre.\""
+    - icon: "🧩"
+      title: La compétence manquante
+      desc: "Votre équipe maîtrise le front. La migration WooCommerce vers Shopify headless, c'est une autre histoire."
+      quote: "\"On n'a personne en interne sur ce stack.\""
+    - icon: "🔗"
+      title: Le client qui vous court-circuite
+      desc: "Il prend des décisions techniques sans vous. Les specs changent. Le projet dérive."
+      quote: "\"Ils ont contacté un dev directement, on a appris après.\""
+    - icon: "📉"
+      title: La dette technique héritée
+      desc: "Vous reprenez un projet livré par une autre agence. Stack indocumentée, plugins en vrac, zero process."
+      quote: "\"On reprend un site dont on n'a aucun historique.\""
+    - icon: "🏗️"
+      title: "L'offre technique à étoffer"
+      desc: "Vos clients demandent du Shopify Plus, du CMS headless, des automatisations. Votre core team n'est pas là-dessus."
+      quote: "\"On aimerait proposer ça mais on n'a pas la ressource.\""
+    - icon: "🎯"
+      title: Le projet sans PO disponible
+      desc: "Le dev attend les specs. Le client ne sait pas prioriser. Personne ne cadre les sprints."
+      quote: "\"On a besoin de quelqu'un pour tenir la roadmap.\""
+
+# ── Section Matching ──────────────────────────
+audit:
+  label: Première étape
+  title: "Un call. On voit si ça matche."
+  desc: >
+    Pas de devis à l'aveugle. On prend 30 minutes pour qualifier le besoin,
+    comprendre votre contexte, et voir concrètement comment je peux m'intégrer.
+  card:
+    title: "Ce qu'on qualifie ensemble"
+    tag_accent: "30 min"
+    tag_grey: Sans engagement
+    items:
+      - title: Contexte projet
+        val: "Stack technique, état du projet, équipe en place, délais"
+      - title: Besoins réels
+        val: "Renfort ponctuel, montée en charge, compétence manquante, PO, conseil"
+      - title: "Mode d'intégration"
+        val: "White label, co-brandé ou relais terrain — on choisit ensemble ce qui fait sens"
+  outcomes:
+    - icon: "🕶️"
+      title: "Renfort — White label"
+      desc: "J'intègre vos équipes sous votre marque. Vos clients ne savent pas que j'existe. Votre process, votre image."
+    - icon: "🛰️"
+      title: "Satellite — Co-brandé"
+      desc: "J'interviens chez votre client en mon nom, dans le cadre de votre mission. Vous gardez le contrôle, je prends la technique."
+    - icon: "📡"
+      title: "Ambassadeur — Relais terrain"
+      desc: "Je suis chez votre client, je fluidifie votre relation avec lui. Je fais avancer les sujets, je suis votre interface de confiance sur place."
+  price:
+    label: Call de matching
+    tag: "Imputable sur la première mission"
+    amount: "80 €"
+    detail_html: >
+      <strong>30 minutes · visio</strong><br>
+      Qualification du besoin, présentation des compétences, choix du mode d'intégration.<br>
+      Imputable sur la première facture de mission.
+    footer: "HT · Sans engagement · Remboursé si on travaille ensemble"
+
+# ── Section Tarifs ────────────────────────────
+plans:
+  label: Tarifs
+  title: "Un TJM selon le rôle. Rien de plus."
+  desc: "Pas de forfait opaque. Le tarif dépend du niveau d'engagement — exécution, pilotage ou conseil stratégique."
+  items:
+    - name: Q/A
+      price: "450€"
+      period: "/ jour HT"
+      features:
+        - "Tests fonctionnels et techniques"
+        - "Recette de livrables"
+        - "Suivi et validation de déploiement"
+        - "Rapports de non-conformité"
+      ideal: "Renfort sur un déploiement ou une phase de recette critique."
+      cta: Caler un call
+    - name: PO
+      tag: Fréquent
+      price: "600€"
+      period: "/ jour HT"
+      features:
+        - "Suivi et animation des sprints"
+        - "Pilotage des développeurs"
+        - "Rédaction et priorisation des tickets"
+        - "Q/A intégré"
+        - "Reporting client"
+      ideal: "Pilotage opérationnel d'un projet ou d'une équipe technique."
+      cta: Caler un call
+    - name: Conseil
+      price: "750€"
+      period: "/ jour HT"
+      features:
+        - "Cadrage et gestion de roadmap"
+        - "Arbitrages budget / périmètre"
+        - "PO inclus"
+        - "Recommandations stack technique"
+        - "Interface stratégique avec le client final"
+      ideal: "Engagement stratégique sur un projet structurant ou un compte clé."
+      cta: Caler un call
+  conditions:
+    title: Conditions
+    items:
+      - "Facturation au réel — à la journée ou demi-journée selon le contexte."
+      - "Disponibilité confirmée à l'issue du call de matching — pas de réservation à l'aveugle."
+      - "Engagement minimum : aucun. Missions courtes (1–2 j) ou rétainer mensuel, les deux sont possibles."
+
+# ── Terminal ──────────────────────────────────
+terminal:
+  filename: fdp-stack.sh
+  lines:
+    - type: cmd
+      prompt: "$ "
+      text: "./profil --export competences"
+    - type: comment
+      text: "# Stack technique — Senior 12 ans"
+    - type: success
+      text: "✓  E-commerce       →  Shopify, Shopify Plus, WooCommerce, PrestaShop"
+    - type: success
+      text: "✓  CMS headless      →  Storyblok, Contentful, Strapi"
+    - type: success
+      text: "✓  No-code / métier  →  Airtable, Softr, Notion"
+    - type: success
+      text: "✓  Automatisation    →  n8n, Make"
+    - type: success
+      text: "✓  CMS classiques    →  WordPress, ACF, Elementor"
+    - type: blank
+    - type: cmd
+      prompt: "$ "
+      text: "./modes --intégration agence"
+    - type: out
+      text: "[ renfort ]     White label — sous votre marque, dans vos process"
+    - type: out
+      text: "[ satellite ]   Co-brandé — chez votre client, dans votre mission"
+    - type: out
+      text: "[ ambassadeur ] Relais terrain — fluidifie agence ↔ client"
+    - type: blank
+    - type: cmd
+      prompt: "$ "
+      text: "./matching --disponibilite"
+    - type: success
+      text: "→  Call 30 min · 80 € · imputable sur mission"
+    - type: success
+      text: "→  Réponse sous 24h ouvrées"
+    - type: success
+      text: "→  Basé Marseille · remote OK · déplacement possible"
+
+# ── CTA ───────────────────────────────────────
+cta:
+  eyebrow: "On commence par un call."
+  title: "30 min pour voir si ça matche.<br>Pas de pitch. Que du concret."
+  sub: "Vous présentez le contexte. Je vous dis ce que je peux faire et comment."
+  sub2: "Senior autonome — aucune supervision nécessaire, aucun onboarding à rallonge."
+  btn: "Réserver un créneau →"
+  btn_url: "https://calendly.com/fdp"
+  hint: "80 € · imputable · Shopify · WordPress · CMS headless · Automatisation"
+
+# ── Footer ────────────────────────────────────
+footer:
+  tags:
+    - Shopify
+    - CMS headless
+    - No-code
+    - Automatisation
