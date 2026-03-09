@@ -787,15 +787,25 @@
     },
 
     outcomes(container, items) {
-      // Also regenerate arrow branches in the sibling arrow col
+      // Regenerate arrow elements (tracks, branches, arrowheads) in the sibling arrow col
       const arrowCol = container.closest('.outcomes-wrapper').querySelector('.audit-arrow-col');
-      // Keep trunk, remove old branches
-      arrowCol.querySelectorAll('.audit-arrow-branch').forEach(b => b.remove());
+      // Remove old arrow elements (keep trunk track + trunk)
+      arrowCol.querySelectorAll('.audit-arrow-branch-track, .audit-arrow-branch, .audit-arrow-head').forEach(b => b.remove());
       items.forEach((_, i) => {
+        const track = document.createElement('div');
+        track.className = 'audit-arrow-branch-track';
+        track.dataset.card = i;
+        arrowCol.appendChild(track);
+
         const branch = document.createElement('div');
         branch.className = 'audit-arrow-branch';
         branch.dataset.card = i;
         arrowCol.appendChild(branch);
+
+        const head = document.createElement('div');
+        head.className = 'audit-arrow-head';
+        head.dataset.card = i;
+        arrowCol.appendChild(head);
       });
 
       container.innerHTML = items.map((o, i) =>
