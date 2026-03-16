@@ -115,7 +115,7 @@ plans:
         - "Suivi et validation de déploiement"
         - "Rapports de non-conformité"
       ideal: "Renfort sur un déploiement ou une phase de recette critique."
-      cta: Caler un call
+      cta: Brief moi
     - name: PO
       tag: Fréquent
       price: "600€"
@@ -127,7 +127,7 @@ plans:
         - "Q/A intégré"
         - "Reporting client"
       ideal: "Pilotage opérationnel d'un projet ou d'une équipe technique."
-      cta: Caler un call
+      cta: Embarque moi
     - name: Conseil
       price: "750€"
       period: "/ jour HT"
@@ -138,7 +138,7 @@ plans:
         - "Recommandations stack technique"
         - "Interface stratégique avec le client final"
       ideal: "Engagement stratégique sur un projet structurant ou un compte clé."
-      cta: Caler un call
+      cta: Implique moi
   conditions:
     title: Conditions
     items:
