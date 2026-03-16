@@ -20,6 +20,7 @@ hero:
     ou comme relais terrain chez votre client.
   btn_primary: "Caler un call de matching →"
   btn_secondary: Voir les tarifs
+  btn_client: "Vous êtes un client final ?"
   meta:
     - val: "12 ans"
       label: "d'expérience terrain"

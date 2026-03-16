@@ -17,6 +17,7 @@ hero:
     Shopify, CMS no-code.
   btn_primary: "Démarrer par un audit →"
   btn_secondary: Voir les formules
+  btn_agence: "Vous êtes une agence ?"
   meta:
     - val: "500–900€"
       label: Audit complet
@@ -76,6 +77,8 @@ audit:
         val: "Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké"
       - title: Analyse des coûts
         val: "Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper"
+      - title: Fonctionnel
+        val: "UX visiteur et admin, parcours de conversion, best practices e-commerce, périmètre fonctionnel vs besoins réels"
   outcomes:
     - icon: "⚡"
       title: One-shot de correction

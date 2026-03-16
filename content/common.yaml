@@ -2,30 +2,12 @@
 # Textes communs (partagés entre les deux modes)
 # ─────────────────────────────────────────────
 
-nav:
-  logo:
-    line1_initial: F
-    line1: ils
-    line2_initial: d
-    line2: e
-    line3_initial: P
-    line3: rojet
-
 mode_switch:
   client: Client
   agence: Agence
 
 hero:
   fdp_static: "Fils de"
-  scrub_reveal: " Projet."
-  reveal_hint: "scroll pour révéler"
 
 footer:
-  logo:
-    line1_initial: F
-    line1: ils
-    line2_initial: d
-    line2: e
-    line3_initial: P
-    line3: rojet
-  copyright: "© 2026"
+  copyright: "© 2026 Fils de Projet"

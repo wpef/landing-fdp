@@ -137,7 +137,7 @@
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 32px;
     height: 56px;
     background: var(--nav-bg);
@@ -145,14 +145,7 @@
     border-bottom: 1px solid var(--border);
     transition: background 0.5s;
   }
-  .nav-left { display: flex; align-items: center; gap: 32px; }
-  .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
-  .nav-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; transition: color 0.5s; }
-  .nav-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: color 0.5s, text-shadow 0.5s; }
-  .nav-links { display: flex; gap: 4px; list-style: none; }
-  .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 5px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
-  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
-  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
   .btn-nav { font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 7px 16px; border-radius: var(--radius-sm); border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: all 0.3s; }
   .btn-nav-ghost { background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); }
   .btn-nav-ghost:hover { background: var(--surface-3); }
@@ -185,30 +178,14 @@
     font-style: italic;
   }
 
-  /* Client scrub animation */
-  .hero-title .fdp-scrub-char {
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 0.15s ease;
-  }
-  .hero-title .fdp-scrub-char.ellipsis {
-    color: var(--accent);
-    font-weight: 600;
-    font-style: normal;
-  }
-  .hero-title .fdp-scrub-char.projet-word {
-    color: var(--text-muted);
-    font-weight: 400;
-    font-style: italic;
-  }
 
-  /* Agence swap animation */
+  /* Word swap animation (shared: agence Chef→Fils + client ...→PROJET) */
   .hero-word-swap { display: inline-block; position: relative; }
-  .hero-word-chef {
+  .hero-word-chef, .hero-word-ellipsis {
     display: inline-block;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  .hero-word-fils {
+  .hero-word-fils, .hero-word-projet {
     display: inline-block;
     position: absolute;
     left: 0; top: 0;
@@ -220,23 +197,32 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     pointer-events: none;
   }
-  .hero-word-swap.revealed .hero-word-chef { opacity: 0; transform: translateY(-6px); }
-  .hero-word-swap.revealed .hero-word-fils { opacity: 1; transform: translateY(0); }
+  .hero-word-swap.revealed .hero-word-chef,
+  .hero-word-swap.revealed .hero-word-ellipsis { opacity: 0; transform: translateY(-6px); }
+  .hero-word-swap.revealed .hero-word-fils,
+  .hero-word-swap.revealed .hero-word-projet { opacity: 1; transform: translateY(0); }
 
-  .hero-reveal-hint {
-    font-size: 11px;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    opacity: 1;
-    transition: opacity 0.4s;
+  /* Ellipsis styling */
+  .hero-word-ellipsis {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
   }
-  .hero-reveal-hint.hidden { opacity: 0; pointer-events: none; }
-  .hero-reveal-hint::before { content: '↓'; font-size: 10px; animation: bounce-hint 1.5s infinite; }
+  .hero-word-projet {
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* Cross CTA (switch mode link in hero) */
+  .btn-cross-cta {
+    font-size: 12px !important;
+    padding: 7px 14px !important;
+    opacity: 0.6;
+    transition: opacity 0.2s, background 0.15s !important;
+  }
+  .btn-cross-cta:hover { opacity: 1; }
 
   .hero-desc { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-bottom: 40px; }
   .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
@@ -271,7 +257,7 @@
   .tag { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 100px; }
   .tag-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); transition: all 0.5s; }
   .tag-grey { background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
-  .audit-card-body { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .audit-card-body { padding: 20px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
   .audit-item-title { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
   .audit-item-val { font-size: 13px; color: var(--text); line-height: 1.5; }
 
@@ -443,10 +429,7 @@
   .cta-hint { font-size: 12px; color: var(--text-dim); margin-top: 16px; }
 
   /* ── FOOTER ────────────────────────────────────────────────────── */
-  footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; overflow: hidden; }
-  .footer-logo { display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
-  .footer-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; }
-  .footer-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: all 0.5s; }
+  footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px; overflow: hidden; }
   .footer-links { display: flex; gap: 24px; flex-wrap: wrap; overflow: hidden; }
   .footer-links span { font-size: 12px; color: var(--text-dim); white-space: nowrap; }
   .footer-right { font-size: 12px; color: var(--text-dim); flex-shrink: 0; }
@@ -456,13 +439,11 @@
   ::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
 
   @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-  @keyframes bounce-hint { 0%,100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
 
   @media (max-width: 640px) {
     .pain-grid, .outcomes-grid, .plans-grid { grid-template-columns: 1fr; }
     .audit-card-body { grid-template-columns: 1fr; }
     nav { padding: 0 16px; }
-    .nav-links { display: none; }
     .hero, .section, .cta-section { padding-left: 16px; padding-right: 16px; }
     .cta-inner { padding: 32px 24px; }
     .outcomes-wrapper { grid-template-columns: 40px 1fr; }
@@ -476,7 +457,6 @@
     .mode-switch-option { font-size: 12px; padding: 7px 16px; }
     footer { flex-direction: column; text-align: center; padding: 20px 16px; gap: 8px; }
     .footer-links { justify-content: center; gap: 16px; }
-    .footer-right { order: -1; }
   }
 </style>
 </head>
@@ -486,15 +466,6 @@
      NAV
      ═══════════════════════════════════════════════════════════════ -->
 <nav>
-  <div class="nav-left">
-    <div class="nav-logo" data-i18n-logo="common.nav.logo"></div>
-    <ul class="nav-links">
-      <li class="mode-content client-only"><a href="#audit" data-i18n="client.nav.link_audit"></a></li>
-      <li class="mode-content client-only"><a href="#plans" data-i18n="client.nav.link_plans"></a></li>
-      <li class="mode-content agence-only"><a href="#audit" data-i18n="agence.nav.link_audit"></a></li>
-      <li class="mode-content agence-only"><a href="#plans" data-i18n="agence.nav.link_plans"></a></li>
-    </ul>
-  </div>
   <div class="nav-right">
     <span class="mode-content client-only">
       <a href="#plans" class="btn-nav btn-nav-ghost" data-i18n="client.nav.btn_secondary"></a>
@@ -520,13 +491,17 @@
     <div class="hero-eyebrow" data-i18n="client.hero.eyebrow"></div>
     <h1 class="hero-title">
       <span class="hero-intro" data-i18n="client.hero.intro"></span>
-      « <span class="fdp-static" data-i18n="common.hero.fdp_static"></span><span id="fdp-scrub"></span> »
+      <span class="fdp-static" data-i18n="common.hero.fdp_static"></span>
+      <span class="hero-word-swap" id="hero-swap-client">
+        <span class="hero-word-ellipsis">...</span>
+        <span class="hero-word-projet">PROJET.</span>
+      </span>
     </h1>
-    <div class="hero-reveal-hint" id="reveal-hint-client" data-i18n="common.hero.reveal_hint"></div>
     <p class="hero-desc" data-i18n="client.hero.desc"></p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary" data-i18n="client.hero.btn_primary"></a>
       <a href="#plans" class="btn-secondary" data-i18n="client.hero.btn_secondary"></a>
+      <a href="#contact" class="btn-secondary btn-cross-cta agence-switch" data-i18n="client.hero.btn_agence"></a>
     </div>
     <div class="hero-meta" data-tpl="meta" data-src="client.hero.meta"></div>
   </div>
@@ -542,11 +517,11 @@
       </span>
       <span class="fdp-static" data-i18n="agence.hero.fdp_static"></span>
     </h1>
-    <div class="hero-reveal-hint" id="reveal-hint-agence" data-i18n="common.hero.reveal_hint"></div>
     <p class="hero-desc" data-i18n="agence.hero.desc"></p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary" data-i18n="agence.hero.btn_primary"></a>
       <a href="#plans" class="btn-secondary" data-i18n="agence.hero.btn_secondary"></a>
+      <a href="#contact" class="btn-secondary btn-cross-cta client-switch" data-i18n="agence.hero.btn_client"></a>
     </div>
     <div class="hero-meta" data-tpl="meta" data-src="agence.hero.meta"></div>
   </div>
@@ -710,7 +685,6 @@
      FOOTER
      ═══════════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo" data-i18n-logo="common.footer.logo"></div>
   <div class="footer-links">
     <div class="mode-content client-only" data-tpl="footer-tags" data-src="client.footer.tags"></div>
     <div class="mode-content agence-only" data-tpl="footer-tags" data-src="agence.footer.tags"></div>
@@ -916,13 +890,6 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function renderLogo(el, data) {
-    el.innerHTML =
-      '<span class="logo-line"><span class="initial">' + esc(data.line1_initial) + '</span>' + esc(data.line1) + '</span>' +
-      '<span class="logo-line"><span class="initial">' + esc(data.line2_initial) + '</span>' + esc(data.line2) + '</span>' +
-      '<span class="logo-line"><span class="initial">' + esc(data.line3_initial) + '</span>' + esc(data.line3) + '</span>';
-  }
-
   function applyContent() {
     // Simple text bindings
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -940,12 +907,6 @@
     document.querySelectorAll('[data-i18n-href]').forEach(el => {
       const val = resolve(el.dataset.i18nHref);
       if (val != null) el.href = val;
-    });
-
-    // Logo bindings
-    document.querySelectorAll('[data-i18n-logo]').forEach(el => {
-      const data = resolve(el.dataset.i18nLogo);
-      if (data) renderLogo(el, data);
     });
 
     // Template bindings
@@ -980,7 +941,7 @@
     body.dataset.mode = mode;
     options.forEach(o => o.classList.toggle('active', o.dataset.mode === mode));
     positionPill();
-    updateClientScrub();
+    updateClientSwap();
     updateAgenceSwap();
     updateArrows();
   }
@@ -996,50 +957,49 @@
     o.addEventListener('click', () => setMode(o.dataset.mode));
   });
 
-  requestAnimationFrame(positionPill);
+  // Position pill after fonts are loaded so widths are accurate
+  function initPill() {
+    positionPill();
+    // Force a re-measure after a short delay for font rendering
+    requestAnimationFrame(() => {
+      requestAnimationFrame(positionPill);
+    });
+  }
+  initPill();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(positionPill);
+  }
+  window.addEventListener('load', positionPill);
   window.addEventListener('resize', positionPill);
 
   // ══════════════════════════════════════════════════════════════
   // ANIMATIONS (initialized after content is loaded)
   // ══════════════════════════════════════════════════════════════
-  let scrubSpans = [];
-  const SCRUB_START = 1;
-  const SCRUB_END = 60;
+  const SWAP_THRESHOLD_CLIENT = 1;
+  const clientSwapEl = document.getElementById('hero-swap-client');
 
   function initAnimations() {
-    // CLIENT: FDP SCRUB (scroll-reveal dots)
-    const scrubContainer = document.getElementById('fdp-scrub');
-    if (scrubContainer) {
-      const scrubText = resolve('common.hero.scrub_reveal') || ' Projet.';
-      const parts = [
-        { char: '.', cls: 'ellipsis' },
-        { char: '.', cls: 'ellipsis' },
-        { char: '.', cls: 'ellipsis' },
-        { char: scrubText, cls: 'projet-word' },
-      ];
-      parts.forEach(({ char, cls }) => {
-        const span = document.createElement('span');
-        span.className = 'fdp-scrub-char' + (cls ? ' ' + cls : '');
-        span.textContent = char;
-        scrubContainer.appendChild(span);
-      });
-      scrubSpans = scrubContainer.querySelectorAll('.fdp-scrub-char');
-    }
+    // Cross CTA click handlers: switch mode
+    document.querySelectorAll('.agence-switch').forEach(el => {
+      el.addEventListener('click', (e) => { e.preventDefault(); setMode('agence'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    });
+    document.querySelectorAll('.client-switch').forEach(el => {
+      el.addEventListener('click', (e) => { e.preventDefault(); setMode('client'); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    });
 
     // Trigger initial scroll state
     onScroll();
     updateArrows();
   }
 
-  function updateClientScrub() {
-    if (!scrubSpans.length) return;
+  function updateClientSwap() {
+    if (!clientSwapEl) return;
     const sy = window.scrollY;
-    const step = (SCRUB_END - SCRUB_START) / scrubSpans.length;
-    scrubSpans.forEach((span, i) => {
-      span.style.opacity = sy >= SCRUB_START + i * step ? '1' : '0';
-    });
-    const hint = document.getElementById('reveal-hint-client');
-    if (hint) hint.classList.toggle('hidden', sy >= SCRUB_START);
+    if (sy >= SWAP_THRESHOLD_CLIENT) {
+      clientSwapEl.classList.add('revealed');
+    } else {
+      clientSwapEl.classList.remove('revealed');
+    }
   }
 
   // ══════════════════════════════════════════════════════════════
@@ -1056,8 +1016,6 @@
     } else {
       swapEl.classList.remove('revealed');
     }
-    const hint = document.getElementById('reveal-hint-agence');
-    if (hint) hint.classList.toggle('hidden', sy >= SWAP_THRESHOLD);
   }
 
   // ══════════════════════════════════════════════════════════════
@@ -1110,7 +1068,7 @@
   // SCROLL LISTENER
   // ══════════════════════════════════════════════════════════════
   function onScroll() {
-    updateClientScrub();
+    updateClientSwap();
     updateAgenceSwap();
     updateArrows();
   }
