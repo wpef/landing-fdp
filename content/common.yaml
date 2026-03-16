@@ -17,8 +17,6 @@ mode_switch:
 
 hero:
   fdp_static: "Fils de"
-  scrub_reveal: " Projet."
-  reveal_hint: "scroll pour révéler"
 
 footer:
   logo:

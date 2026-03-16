@@ -17,6 +17,7 @@ hero:
     Shopify, CMS no-code.
   btn_primary: "Démarrer par un audit →"
   btn_secondary: Voir les formules
+  btn_agence: "Vous êtes une agence ?"
   meta:
     - val: "500–900€"
       label: Audit complet
@@ -76,6 +77,19 @@ audit:
         val: "Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké"
       - title: Analyse des coûts
         val: "Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper"
+  bestpractices:
+    icon: "🏢"
+    title: "Bonus : mon expérience grand compte à ton service"
+    desc: >
+      12 ans en agence et chez des clients grands comptes. Je t'apporte les best practices
+      des structures qui investissent des millions dans leur web — adaptées à ton échelle.
+    items:
+      - "Process de recette et validation structurés"
+      - "Monitoring et alerting proactifs"
+      - "Documentation technique systématique"
+      - "Gestion de versions et rollback maîtrisés"
+      - "Optimisation des coûts d'infrastructure"
+      - "Sécurité et conformité RGPD intégrées"
   outcomes:
     - icon: "⚡"
       title: One-shot de correction
