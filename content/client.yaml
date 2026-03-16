@@ -19,14 +19,14 @@ hero:
   btn_agence: "Vous êtes une agence ?"
   meta:
     - val: "12 ans"
-      label: Expérience
+      label: d'expérience
     - val: "60 clients"
-      label: du grand compte à la petite marque
+      label: grand compte / petit créateur
     - val: "0"
-      label: Engagement requis
+      label: Engagement
     - val: "30 min"
-      label: de conv' offerte pour voir ce que je peux apporter
-
+      label: de conv' avant de démarrer
+      
 # ── Section Pain ──────────────────────────────
 pain:
   label: Pourquoi Fils de Projet
