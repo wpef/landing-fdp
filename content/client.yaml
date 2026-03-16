@@ -10,102 +10,102 @@ nav:
 
 hero:
   eyebrow: "Freelance indépendant — Maintenance web"
-  intro: "Quand tu reçois le mail de l'agence qui te fait dire…"
+  intro: "Quand tu reçois le retour qui te fait dire…"
   desc: >
-    C'est exactement là qu'intervient Fils de Projet. Seul aux commandes,
-    direct, sans intermédiaire. Ton site géré sérieusement — WordPress,
-    Shopify, CMS no-code.
+    Support, Tiers, Agence, Chatbot, quand les échanges ne font qu'empirer le problème, c'est là que j'interviens.
+    Seul aux commandes, direct, sans intermédiaire.
   btn_primary: "Démarrer par un audit →"
   btn_secondary: Voir les formules
   btn_agence: "Vous êtes une agence ?"
   meta:
-    - val: "500–900€"
-      label: Audit complet
-    - val: "5–7 j"
-      label: Délai de livraison
+    - val: "12 ans"
+      label: Expérience
+    - val: "60 clients"
+      label: du grand compte à la petite marque
     - val: "0"
       label: Engagement requis
-    - val: "1"
-      label: Interlocuteur
+    - val: "30 min"
+      label: de conv' offerte pour voir ce que je peux apporter
 
 # ── Section Pain ──────────────────────────────
 pain:
   label: Pourquoi Fils de Projet
-  title: "Ce que les agences font mal."
-  desc: "Tu paies pour un service. Tu obtiens de la bureaucratie."
+  title: "Ce que vos prestataires ne font plus."
+  desc: "Quand le suivi se perd"
   items:
     - icon: "⏳"
       title: Les délais
-      desc: "3 semaines pour modifier un texte. Quand t'as un interlocuteur disponible."
-      quote: "\"C'est en cours de traitement.\""
-    - icon: "👻"
-      title: Les interlocuteurs fantômes
-      desc: "Le chef de projet change tous les 6 mois. Personne ne connaît ton site."
-      quote: "\"Je reprends le dossier, tu peux me re-expliquer ?\""
+      desc: "3 jours pour un truc qui prend 10 minutes. Et encore, quand quelqu'un est disponible."
+      quote: "\"Ce sera traité dans le courant de la semaine.\""
     - icon: "💸"
       title: "L'opacité"
-      desc: "Tu paies sans savoir ce que ça couvre. Les devis arrivent après les surprises."
-      quote: "\"Ce n'était pas inclus dans le forfait initial.\""
+      desc: "Tu paies un forfait, tu sais pas ce que ça couvre. Les surprises arrivent après la facture."
+      quote: "\"Ce n'était pas inclus dans le scope validé.\""
+    - icon: "🧱"
+      title: Le mur technique
+      desc: "Tu veux tester un SaaS, automatiser un flux, optimiser pour l'IA… ton presta sait pas faire."
+      quote: "\"C'est pas dans notre périmètre de compétences.\""
     - icon: "🔇"
-      title: Le silence radio
-      desc: "Ton site plante un dimanche. Tu l'apprends le lundi en ouvrant tes mails."
-      quote: "\"On a été alerté, on traite ça en priorité.\""
-    - icon: "🗃️"
-      title: La stack surdimensionnée
-      desc: "Plugins inutiles, hébergement trop cher, abonnements qui tournent dans le vide."
-      quote: "\"On a mis en place une solution robuste et scalable.\""
-    - icon: "📋"
-      title: Le process lourd
-      desc: "Brief → validation → devis → go → livraison. Pour chaque modification mineure."
-      quote: "\"Il faut qu'on fasse un point en visio d'abord.\""
+      title: La traduction impossible
+      desc: "Ton dev parle en tickets Jira. Toi tu parles en résultats. Personne ne fait le lien."
+      quote: "\"Tu peux me refaire un brief plus technique ?\""
+    - icon: "👻"
+      title: Le turnover
+      desc: "Ton interlocuteur change, personne ne connaît ton historique. Tu re-expliques tout de zéro."
+      quote: "\"Je reprends le dossier, tu peux me re-contextualiser ?\""
+    - icon: "🕸️"
+      title: Le site qui prend la poussière
+      desc: "Personne ne surveille, personne ne propose rien. Tu t'en rends compte quand ça plante."
+      quote: "\"Ah oui, on avait pas vu que le certificat avait expiré.\""
+
 
 # ── Section Audit ─────────────────────────────
 audit:
   label: Première étape
-  title: "L'audit qui dit la vérité."
+  title: "L'audit, sans bégayer"
   desc: >
     Avant de toucher quoi que ce soit, je te dis la vérité sur ton site.
-    Ce qui coûte trop cher. Ce qui fout tout en l'air. Ce qu'on fait ensuite.
+    Ce qui coûte trop cher. Ce qui flingue tes perfs. Ce qu'on peut en faire.
   card:
     title: "Périmètre de l'audit"
     tag_accent: Inclus
     tag_grey: "5–7 jours ouvrés"
     items:
+      - title: Fonctionnel
+        val: "UX visiteur et admin, parcours de conversion, best practices e-commerce, périmètre fonctionnel vs besoins réels"
       - title: Technique
         val: "Core Web Vitals, sécurité, mises à jour manquantes, bugs visuels et fonctionnels"
       - title: "SEO & Tracking"
         val: "Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké"
       - title: Analyse des coûts
         val: "Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper"
-      - title: Fonctionnel
-        val: "UX visiteur et admin, parcours de conversion, best practices e-commerce, périmètre fonctionnel vs besoins réels"
   outcomes:
     - icon: "⚡"
       title: One-shot de correction
-      desc: "Site globalement sain. Quelques problèmes ciblés à régler, puis terminé."
+      desc: "Site globalement sain. Quelques problèmes ciblés à régler, puis termino pipo."
     - icon: "🔄"
       title: Suivi long terme
       desc: "Le site a de la valeur et nécessite un accompagnement régulier. On met en place un plan."
     - icon: "🚀"
       title: Refonte ou migration
-      desc: "La stack actuelle est inadaptée ou trop coûteuse. On évalue ensemble la meilleure option."
+      desc: "La stack actuelle est inadaptée ou trop coûteuse (ou trop relou). On évalue ensemble la meilleure option."
   price:
     label: Tarif audit
     tag: Sans engagement
     tiers:
       - amount: "500 €"
-        label: "Site vitrine · CMS standard"
-        detail: "Moins de 20 pages · stack simple"
+        label: "CMS standard · Stack simple"
+        detail: "Wordpress, Shopify · solutions natives"
       - amount: "900 €"
-        label: "E-commerce · stack complexe"
-        detail: "WooCommerce, Shopify · plugins nombreux"
+        label: "Headless, CMS Maison · Stack custom"
+        detail: "Shopify Custom , Contentful, WooCommerce · solutions sur-mesure"
     footer: "Livraison 5–7 jours ouvrés · HT"
 
 # ── Section Plans ─────────────────────────────
 plans:
   label: Formules
   title: "Pas d'abonnement piège."
-  desc: "Pas de préavis contractuel. Tu restes parce que c'est bon, pas parce que t'as signé quelque chose."
+  desc: "Pas de préavis contractuel. Tu restes parce que c'est rentable, pas parce que t'as signé quelque chose."
   items:
     - name: Essentiel
       price: "290€"
@@ -123,6 +123,7 @@ plans:
       period: "/ mois HT"
       features:
         - "Tout l'Essentiel inclus"
+        - "Suggestion d'améliorations mensuelles"
         - "4h de dev / modifications / mois"
         - "Rapport mensuel + recommandations"
         - "Réponse sous 24h ouvrées"
@@ -133,10 +134,10 @@ plans:
       period: "/ mois HT"
       features:
         - "Tout l'Actif inclus"
+        - "Roadmap proactive mensuelle"
         - "8h de dev / mois"
         - "Canal Slack dédié"
         - "Réponse sous 4h · SLA critique 24h"
-        - "Roadmap proactive mensuelle"
       ideal: "E-commerçants, startups — le site est un levier business central."
       cta: Démarrer
   conditions:
@@ -144,7 +145,7 @@ plans:
     items:
       - "Aucun engagement de durée — tu pars quand tu veux, sans préavis."
       - "Les heures non consommées sont reportées au mois suivant."
-      - "Les dépassements sont rattrapés — déduits de ton crédit disponible, sinon facturés au TJM (350–450 € / j)."
+      - "Les dépassements sont rattrapés — déduits de ton crédit disponible."
 
 # ── Terminal ──────────────────────────────────
 terminal:
@@ -195,17 +196,16 @@ terminal:
 # ── CTA ───────────────────────────────────────
 cta:
   eyebrow: "On commence par un audit."
-  title: "30 min de call.<br>Je regarde. Je te dis ce que j'en pense. Vraiment."
+  title: "30 min de call.<br>Je regarde. Je te dis ce que j'en pense. Sans bégayer."
   sub: "Pas de devis bullshit. Pas d'engagement."
-  sub2: "Seul aux commandes — sans intermédiaire, sans process lourd."
+  sub2: "Seul interlocuteurs — sans intermédiaire, sans process lourd."
   btn: "Réserver un créneau →"
-  btn_url: "https://calendly.com/fdp"
-  hint: "Réponse sous 24h · WordPress · Shopify · WooCommerce · CMS no-code"
+  btn_url: "https://calendar.app.google/trRBd7HbUFopDRSt9"
+  hint: "Réponse sous 24h · WordPress · Shopify · CMS no-code"
 
 # ── Footer ────────────────────────────────────
 footer:
   tags:
     - WordPress
     - Shopify
-    - WooCommerce
     - CMS no-code
