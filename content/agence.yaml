@@ -5,8 +5,8 @@
 nav:
   link_audit: Matching
   link_plans: Tarifs
-  btn_secondary: Voir les tarifs
-  btn_primary: Caler un call
+  btn_secondary: Voir les fromules
+  btn_primary: Prendre RDV
 
 hero:
   eyebrow: "Renfort technique — Partenaire agence"
@@ -15,21 +15,21 @@ hero:
   word_fils: Fils
   fdp_static: " de Projet."
   desc: >
-    Senior 12 ans. Shopify, WordPress, WooCommerce, PrestaShop, CMS headless.
+    Senior 12 ans. Shopify, WordPress, CMS legacy, CMS headless.
     Je me glisse dans votre organisation — en white label, co-brandé,
     ou comme relais terrain chez votre client.
-  btn_primary: "Caler un call de matching →"
+  btn_primary: "Brief moi →"
   btn_secondary: Voir les tarifs
   btn_client: "Vous êtes un client final ?"
   meta:
     - val: "12 ans"
       label: "d'expérience terrain"
     - val: "30 min"
-      label: Call de matching
+      label: de call de matching
     - val: "3"
       label: "Modes d'intégration"
     - val: "1"
-      label: Interlocuteur senior
+      label: Renfort pour vos équipes
 
 # ── Section Pain ──────────────────────────────
 pain:
@@ -184,7 +184,7 @@ terminal:
     - type: success
       text: "→  Réponse sous 24h ouvrées"
     - type: success
-      text: "→  Basé Marseille · remote OK · déplacement possible"
+      text: "→  Basé Marseille · full remote · déplacements possibles"
 
 # ── CTA ───────────────────────────────────────
 cta:
@@ -193,8 +193,8 @@ cta:
   sub: "Vous présentez le contexte. Je vous dis ce que je peux faire et comment."
   sub2: "Senior autonome — aucune supervision nécessaire, aucun onboarding à rallonge."
   btn: "Réserver un créneau →"
-  btn_url: "https://calendly.com/fdp"
-  hint: "80 € · imputable · Shopify · WordPress · CMS headless · Automatisation"
+  btn_url: "https://calendar.app.google/trRBd7HbUFopDRSt9"
+  hint: "Shopify · WordPress · CMS headless · Automatisation"
 
 # ── Footer ────────────────────────────────────
 footer:
