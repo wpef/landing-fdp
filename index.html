@@ -137,7 +137,7 @@
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 32px;
     height: 56px;
     background: var(--nav-bg);
@@ -145,14 +145,7 @@
     border-bottom: 1px solid var(--border);
     transition: background 0.5s;
   }
-  .nav-left { display: flex; align-items: center; gap: 32px; }
-  .nav-logo { display: flex; flex-direction: column; line-height: 1.15; }
-  .nav-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; transition: color 0.5s; }
-  .nav-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: color 0.5s, text-shadow 0.5s; }
-  .nav-links { display: flex; gap: 4px; list-style: none; }
-  .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 5px 12px; border-radius: var(--radius-sm); transition: color 0.15s, background 0.15s; }
-  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
-  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
   .btn-nav { font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 7px 16px; border-radius: var(--radius-sm); border: none; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; transition: all 0.3s; }
   .btn-nav-ghost { background: var(--surface-2); color: var(--text); border: 1px solid var(--border-strong); }
   .btn-nav-ghost:hover { background: var(--surface-3); }
@@ -264,62 +257,9 @@
   .tag { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 100px; }
   .tag-accent { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border); transition: all 0.5s; }
   .tag-grey { background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
-  .audit-card-body { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .audit-card-body { padding: 20px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
   .audit-item-title { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
   .audit-item-val { font-size: 13px; color: var(--text); line-height: 1.5; }
-
-  /* ── BEST PRACTICES (grand compte) ─────────────────────────────── */
-  .bestpractices-block {
-    background: var(--surface);
-    border: 1px solid var(--accent-border);
-    border-radius: var(--radius);
-    padding: 24px;
-    margin-top: 24px;
-    margin-bottom: 8px;
-  }
-  .bestpractices-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-  .bestpractices-icon {
-    font-size: 16px;
-  }
-  .bestpractices-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: -0.01em;
-  }
-  .bestpractices-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-  .bestpractices-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .bestpractices-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-  .bestpractices-check {
-    color: var(--accent);
-    flex-shrink: 0;
-    margin-top: 1px;
-    font-size: 11px;
-  }
-  @media (max-width: 640px) {
-    .bestpractices-grid { grid-template-columns: 1fr; }
-  }
 
   /* ── OUTCOMES ──────────────────────────────────────────────────── */
   .outcomes-wrapper {
@@ -489,10 +429,7 @@
   .cta-hint { font-size: 12px; color: var(--text-dim); margin-top: 16px; }
 
   /* ── FOOTER ────────────────────────────────────────────────────── */
-  footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; overflow: hidden; }
-  .footer-logo { display: flex; flex-direction: column; line-height: 1.15; flex-shrink: 0; }
-  .footer-logo .logo-line { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: baseline; }
-  .footer-logo .initial { font-size: 14px; font-weight: 700; color: var(--accent); text-shadow: 0 0 6px var(--accent-glow), 0 0 16px var(--accent-glow-soft); letter-spacing: 0; line-height: 1; margin-right: 2px; transition: all 0.5s; }
+  footer { border-top: 1px solid var(--border); padding: 24px 32px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px; overflow: hidden; }
   .footer-links { display: flex; gap: 24px; flex-wrap: wrap; overflow: hidden; }
   .footer-links span { font-size: 12px; color: var(--text-dim); white-space: nowrap; }
   .footer-right { font-size: 12px; color: var(--text-dim); flex-shrink: 0; }
@@ -507,7 +444,6 @@
     .pain-grid, .outcomes-grid, .plans-grid { grid-template-columns: 1fr; }
     .audit-card-body { grid-template-columns: 1fr; }
     nav { padding: 0 16px; }
-    .nav-links { display: none; }
     .hero, .section, .cta-section { padding-left: 16px; padding-right: 16px; }
     .cta-inner { padding: 32px 24px; }
     .outcomes-wrapper { grid-template-columns: 40px 1fr; }
@@ -521,7 +457,6 @@
     .mode-switch-option { font-size: 12px; padding: 7px 16px; }
     footer { flex-direction: column; text-align: center; padding: 20px 16px; gap: 8px; }
     .footer-links { justify-content: center; gap: 16px; }
-    .footer-right { order: -1; }
   }
 </style>
 </head>
@@ -531,9 +466,6 @@
      NAV
      ═══════════════════════════════════════════════════════════════ -->
 <nav>
-  <div class="nav-left">
-    <div class="nav-logo" data-i18n-logo="common.nav.logo"></div>
-  </div>
   <div class="nav-right">
     <span class="mode-content client-only">
       <a href="#plans" class="btn-nav btn-nav-ghost" data-i18n="client.nav.btn_secondary"></a>
@@ -634,8 +566,6 @@
       </div>
       <div class="audit-card-body" data-tpl="audit-items" data-src="client.audit.card.items"></div>
     </div>
-
-    <div class="bestpractices-block" data-tpl="bestpractices" data-src="client.audit.bestpractices"></div>
 
     <div class="outcomes-wrapper" id="outcomes-wrapper-client">
       <div class="audit-arrow-col">
@@ -755,7 +685,6 @@
      FOOTER
      ═══════════════════════════════════════════════════════════════ -->
 <footer>
-  <div class="footer-logo" data-i18n-logo="common.footer.logo"></div>
   <div class="footer-links">
     <div class="mode-content client-only" data-tpl="footer-tags" data-src="client.footer.tags"></div>
     <div class="mode-content agence-only" data-tpl="footer-tags" data-src="agence.footer.tags"></div>
@@ -829,24 +758,6 @@
           '<div class="audit-item-val">' + esc(a.val) + '</div>' +
         '</div>'
       ).join('');
-    },
-
-    bestpractices(container, data) {
-      if (!data) return;
-      container.innerHTML =
-        '<div class="bestpractices-header">' +
-          '<span class="bestpractices-icon">' + esc(data.icon) + '</span>' +
-          '<span class="bestpractices-title">' + esc(data.title) + '</span>' +
-        '</div>' +
-        '<div class="bestpractices-desc">' + esc(data.desc) + '</div>' +
-        '<div class="bestpractices-grid">' +
-          data.items.map(item =>
-            '<div class="bestpractices-item">' +
-              '<span class="bestpractices-check">✓</span>' +
-              '<span>' + esc(item) + '</span>' +
-            '</div>'
-          ).join('') +
-        '</div>';
     },
 
     outcomes(container, items) {
@@ -979,13 +890,6 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function renderLogo(el, data) {
-    el.innerHTML =
-      '<span class="logo-line"><span class="initial">' + esc(data.line1_initial) + '</span>' + esc(data.line1) + '</span>' +
-      '<span class="logo-line"><span class="initial">' + esc(data.line2_initial) + '</span>' + esc(data.line2) + '</span>' +
-      '<span class="logo-line"><span class="initial">' + esc(data.line3_initial) + '</span>' + esc(data.line3) + '</span>';
-  }
-
   function applyContent() {
     // Simple text bindings
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1003,12 +907,6 @@
     document.querySelectorAll('[data-i18n-href]').forEach(el => {
       const val = resolve(el.dataset.i18nHref);
       if (val != null) el.href = val;
-    });
-
-    // Logo bindings
-    document.querySelectorAll('[data-i18n-logo]').forEach(el => {
-      const data = resolve(el.dataset.i18nLogo);
-      if (data) renderLogo(el, data);
     });
 
     // Template bindings

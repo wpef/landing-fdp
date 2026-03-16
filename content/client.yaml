@@ -77,19 +77,8 @@ audit:
         val: "Structure, balises, GTM, GA4, pixels — vérification de ce qui est réellement tracké"
       - title: Analyse des coûts
         val: "Hébergement, plugins premium, abonnements — identification de ce qu'on peut couper"
-  bestpractices:
-    icon: "🏢"
-    title: "Bonus : mon expérience grand compte à ton service"
-    desc: >
-      12 ans en agence et chez des clients grands comptes. Je t'apporte les best practices
-      des structures qui investissent des millions dans leur web — adaptées à ton échelle.
-    items:
-      - "Process de recette et validation structurés"
-      - "Monitoring et alerting proactifs"
-      - "Documentation technique systématique"
-      - "Gestion de versions et rollback maîtrisés"
-      - "Optimisation des coûts d'infrastructure"
-      - "Sécurité et conformité RGPD intégrées"
+      - title: Fonctionnel
+        val: "UX visiteur et admin, parcours de conversion, best practices e-commerce, périmètre fonctionnel vs besoins réels"
   outcomes:
     - icon: "⚡"
       title: One-shot de correction
